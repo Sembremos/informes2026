@@ -38,7 +38,10 @@ def dibujar_tabla(
     tabla = Table(
         datos,
         colWidths=col_widths,
-        configuracion = [
+        rowHeights=estilo["alto_fila"]
+    )
+    
+    configuracion = [
 
         (
             "BACKGROUND",
