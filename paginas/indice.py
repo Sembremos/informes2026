@@ -257,7 +257,7 @@ def crear_indice(
         insertar_grafico_pastel_s
     )
 
-    # =====================================
+        # =====================================
     # EDAD
     # =====================================
 
@@ -270,13 +270,7 @@ def crear_indice(
 
     etiquetas_edad = []
     valores_edad = []
-
-    tabla_edad = [
-        [
-            "Edad",
-            "Frecuencia"
-        ]
-    ]
+    frecuencias_edad = []
 
     for fila in range(
         29,
@@ -298,39 +292,31 @@ def crear_indice(
         if categoria is None:
             continue
 
+        if porcentaje is None:
+            continue
+
         etiquetas_edad.append(
             str(categoria)
         )
-
-        if porcentaje is None:
-            continue
 
         valores_edad.append(
             float(porcentaje) * 100
         )
 
-        tabla_edad.append(
-            [
-                str(categoria),
-                str(frecuencia)
-            ]
+        frecuencias_edad.append(
+            frecuencia
         )
 
     insertar_grafico_pastel_s(
         pdf,
         etiquetas_edad,
         valores_edad,
+        frecuencias_edad,
         "Participación por Edad",
-        30,
-        555
-    )
-
-    dibujar_tabla(
-        pdf,
-        tabla_edad,
-        TABLA_M,
-        300,
-        700
+        grafico_x=30,
+        grafico_y=555,
+        leyenda_x=180,
+        leyenda_y=690
     )
 
     # =====================================
@@ -346,13 +332,7 @@ def crear_indice(
 
     etiquetas_escolaridad = []
     valores_escolaridad = []
-
-    tabla_escolaridad = [
-        [
-            "Escolaridad",
-            "Frecuencia"
-        ]
-    ]
+    frecuencias_escolaridad = []
 
     for fila in range(
         39,
@@ -374,42 +354,34 @@ def crear_indice(
         if categoria is None:
             continue
 
+        if porcentaje is None:
+            continue
+
         etiquetas_escolaridad.append(
             str(categoria)
         )
-
-        if porcentaje is None:
-            continue
 
         valores_escolaridad.append(
             float(porcentaje) * 100
         )
 
-        tabla_escolaridad.append(
-            [
-                str(categoria),
-                str(frecuencia)
-            ]
+        frecuencias_escolaridad.append(
+            frecuencia
         )
 
     insertar_grafico_pastel_s(
         pdf,
         etiquetas_escolaridad,
         valores_escolaridad,
+        frecuencias_escolaridad,
         "Participación por Escolaridad",
-        30,
-        325
+        grafico_x=30,
+        grafico_y=325,
+        leyenda_x=180,
+        leyenda_y=470
     )
 
-    dibujar_tabla(
-        pdf,
-        tabla_escolaridad,
-        TABLA_M,
-        300,
-        505
-    )
-    
-     # =====================================
+    # =====================================
     # GENERO
     # =====================================
 
@@ -422,13 +394,7 @@ def crear_indice(
 
     etiquetas_genero = []
     valores_genero = []
-
-    tabla_genero = [
-        [
-            "Genero",
-            "Frecuencia"
-        ]
-    ]
+    frecuencias_genero = []
 
     for fila in range(
         52,
@@ -450,37 +416,29 @@ def crear_indice(
         if categoria is None:
             continue
 
+        if porcentaje is None:
+            continue
+
         etiquetas_genero.append(
             str(categoria)
         )
-
-        if porcentaje is None:
-            continue
 
         valores_genero.append(
             float(porcentaje) * 100
         )
 
-        tabla_genero.append(
-            [
-                str(categoria),
-                str(frecuencia)
-            ]
+        frecuencias_genero.append(
+            frecuencia
         )
 
     insertar_grafico_pastel_s(
         pdf,
         etiquetas_genero,
         valores_genero,
+        frecuencias_genero,
         "Participación por Genero",
-        30,
-        100
-    )
-
-    dibujar_tabla(
-        pdf,
-        tabla_genero,
-        TABLA_M,
-        300,
-        200
+        grafico_x=30,
+        grafico_y=100,
+        leyenda_x=180,
+        leyenda_y=190
     )
