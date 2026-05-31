@@ -188,7 +188,12 @@ def crear_indice(
             ",",
             "."
         )
-
+        #test...................................................
+        print(
+            "PORCENTAJE:",
+            porcentaje
+        )
+        #.......................................................
         valores.append(
             float(
                 valor_limpio
