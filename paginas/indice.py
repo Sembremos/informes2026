@@ -89,17 +89,11 @@ def crear_indice(
     # TABLA DISTRITO
     # ==========================
 
-    datos_tabla = [
-        [
-            "Distrito",
-            "%",
-            "Frecuencia"
-        ]
-    ]
+    datos_tabla = []
 
     for fila in range(
-        7,
-        12
+        8,
+        24
     ):
 
         distrito = hoja[
@@ -122,10 +116,18 @@ def crear_indice(
         
             continue
 
+        porcentaje_pdf = ""
+
+        if porcentaje is not None:
+        
+            porcentaje_pdf = (
+                f"{float(porcentaje) * 100:.2f}%"
+            )
+        
         datos_tabla.append(
             [
                 str(distrito),
-                str(porcentaje),
+                porcentaje_pdf,
                 str(frecuencia)
             ]
         )
@@ -164,7 +166,7 @@ def crear_indice(
 
     for fila in range(
         8,
-        12
+        24
     ):
 
         categoria = hoja[
