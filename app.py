@@ -1,15 +1,29 @@
 import streamlit as st
 from io import BytesIO
+
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 
+from datos.lector_excel import leer_datos_generales
+from paginas.subportada import crear_subportada
 
-def generar_pdf():
+
+def generar_pdf(archivo_excel):
+
+    datos = leer_datos_generales(
+        archivo_excel
+    )
+
     buffer = BytesIO()
 
-    pdf = canvas.Canvas(buffer, pagesize=A4)
+    pdf = canvas.Canvas(
+        buffer,
+        pagesize=A4
+    )
 
     ancho, alto = A4
+
+    # PORTADA PRINCIPAL
 
     pdf.drawImage(
         "portadas/portada.png",
@@ -20,6 +34,14 @@ def generar_pdf():
     )
 
     pdf.showPage()
+
+    # SUBPORTADA
+
+    crear_subportada(
+        pdf,
+        datos["delegacion"],
+        datos["canton"]
+    )
 
     pdf.save()
 
@@ -35,12 +57,22 @@ st.set_page_config(
 
 st.title("Informes 2026")
 
-if st.button("Generar PDF"):
-    pdf_file = generar_pdf()
+archivo_excel = st.file_uploader(
+    "Seleccione el archivo Excel",
+    type=["xlsx"]
+)
 
-    st.download_button(
-        label="Descargar PDF",
-        data=pdf_file,
-        file_name="informe.pdf",
-        mime="application/pdf"
-    )
+if archivo_excel is not None:
+
+    if st.button("Generar PDF"):
+
+        pdf_file = generar_pdf(
+            archivo_excel
+        )
+
+        st.download_button(
+            label="Descargar PDF",
+            data=pdf_file,
+            file_name="informe.pdf",
+            mime="application/pdf"
+        )
