@@ -40,6 +40,8 @@ def _crear_pastel(
         radius=1
     )
 
+    ax.axis("equal")
+
     ax.legend(
         etiquetas,
         loc="center left",
@@ -67,7 +69,7 @@ def _crear_pastel(
 
     plt.tight_layout()
 
-    pplt.savefig(
+    plt.savefig(
         temp.name,
         dpi=300
     )
