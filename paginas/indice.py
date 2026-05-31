@@ -437,8 +437,8 @@ def crear_indice(
         valores_genero,
         frecuencias_genero,
         "Participación por Genero",
-        grafico_x=35,
-        grafico_y=80,
+        grafico_x=50,
+        grafico_y=60,
         leyenda_x=350,
         leyenda_y=190
     )
