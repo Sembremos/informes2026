@@ -12,7 +12,7 @@ def generar_pdf():
     ancho, alto = A4
 
     pdf.drawImage(
-        "Portadas/portada.png",
+        "portadas/portada.png",
         0,
         0,
         width=ancho,
