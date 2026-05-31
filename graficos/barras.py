@@ -76,24 +76,27 @@ def _crear_grafico(
 
     for barra, valor in zip(
 
-        barras,
+    barras,
 
-        valores
+    valores
 
-    ):
+):
 
-        ax.text(
+    ax.text(
 
-            barra.get_x()
-            + barra.get_width() / 2,
+        barra.get_x()
+        + barra.get_width() / 2,
 
-            barra.get_height(),
+        barra.get_height(),
 
-            f"{valor:.2f}%",
+        f"{valor:.2f}%",
 
-            ha="center"
+        ha="center",
 
-        )
+        fontsize=estilo[
+            "fuente_etiquetas"
+        ]
+    )
 
     temp = tempfile.NamedTemporaryFile(
 
