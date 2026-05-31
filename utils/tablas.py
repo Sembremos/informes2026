@@ -96,6 +96,36 @@ def dibujar_tabla(
 
         )
 
+    # ==========================
+    # NUEVO:
+    # SOPORTE PARA COLUMNA COLOR
+    # ==========================
+
+    if datos[0][0] == "COLOR":
+
+        for fila in range(
+            1,
+            len(datos)
+        ):
+
+            try:
+
+                configuracion.append(
+
+                    (
+                        "BACKGROUND",
+                        (0, fila),
+                        (0, fila),
+                        colors.HexColor(
+                            datos[fila][0]
+                        )
+                    )
+
+                )
+
+            except:
+                pass
+
     tabla.setStyle(
         TableStyle(
             configuracion
