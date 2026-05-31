@@ -98,8 +98,8 @@ def crear_indice(
     ]
 
     for fila in range(
-        7,
-        24
+        8,
+        12
     ):
 
         distrito = hoja[
