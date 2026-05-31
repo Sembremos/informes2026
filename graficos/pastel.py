@@ -2,16 +2,20 @@ import tempfile
 
 import matplotlib.pyplot as plt
 
+
 from styles.graficos import (
+    GRAFICO_PASTEL_L,
+    GRAFICO_PASTEL_M,
     GRAFICO_PASTEL_S
 )
 
 
-def insertar_grafico_pastel_s(
+def _crear_pastel(
     pdf,
     etiquetas,
     valores,
     titulo,
+    estilo,
     x,
     y
 ):
@@ -20,9 +24,9 @@ def insertar_grafico_pastel_s(
 
         figsize=(
 
-            GRAFICO_PASTEL_S["ancho"] / 100,
+            estilo["ancho"] / 100,
 
-            GRAFICO_PASTEL_S["alto"] / 100
+            estilo["alto"] / 100
 
         )
 
@@ -36,7 +40,7 @@ def insertar_grafico_pastel_s(
 
         autopct="%1.0f%%",
 
-        colors=GRAFICO_PASTEL_S[
+        colors=estilo[
             "colores"
         ]
 
@@ -46,7 +50,7 @@ def insertar_grafico_pastel_s(
 
         titulo,
 
-        fontsize=GRAFICO_PASTEL_S[
+        fontsize=estilo[
             "fuente_titulo"
         ]
 
@@ -82,8 +86,69 @@ def insertar_grafico_pastel_s(
 
         y,
 
-        width=GRAFICO_PASTEL_S["ancho"],
+        width=estilo["ancho"],
 
-        height=GRAFICO_PASTEL_S["alto"]
+        height=estilo["alto"]
 
     )
+
+
+def insertar_grafico_pastel_l(
+    pdf,
+    etiquetas,
+    valores,
+    titulo,
+    x,
+    y
+):
+
+    _crear_pastel(
+        pdf,
+        etiquetas,
+        valores,
+        titulo,
+        GRAFICO_PASTEL_L,
+        x,
+        y
+    )
+
+
+def insertar_grafico_pastel_m(
+    pdf,
+    etiquetas,
+    valores,
+    titulo,
+    x,
+    y
+):
+
+    _crear_pastel(
+        pdf,
+        etiquetas,
+        valores,
+        titulo,
+        GRAFICO_PASTEL_M,
+        x,
+        y
+    )
+
+
+def insertar_grafico_pastel_s(
+    pdf,
+    etiquetas,
+    valores,
+    titulo,
+    x,
+    y
+):
+
+    _crear_pastel(
+        pdf,
+        etiquetas,
+        valores,
+        titulo,
+        GRAFICO_PASTEL_S,
+        x,
+        y
+    )
+    
