@@ -19,7 +19,7 @@ TITULO_2 = {
 # SubtitulosS
 # ==========================
 
-PARRAFO = {
+Subti = {
     "color": "#021629",
     "tamano": 15
 }
