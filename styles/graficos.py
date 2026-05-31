@@ -14,7 +14,7 @@ GRAFICO_BARRAS_L = {
         "#62d939",
         "#116bc5"
     ],
-    "fuente_etiquetas": 20,
+    "fuente_etiquetas": 12,
     "fuente_texto": 6,
     "fuente_titulo": 7
 }
@@ -25,7 +25,7 @@ GRAFICO_BARRAS_M = {
     "colores": [
         "#31a908"
     ],
-    "fuente_etiquetas": 20,
+    "fuente_etiquetas": 12,
     "fuente_texto": 6,
     "fuente_titulo": 7
 }
@@ -36,7 +36,7 @@ GRAFICO_BARRAS_S = {
     "colores": [
         "#31a908"
     ],
-    "fuente_etiquetas": 20,
+    "fuente_etiquetas": 12,
     "fuente_texto": 6,
     "fuente_titulo": 7
 }
