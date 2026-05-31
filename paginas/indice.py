@@ -187,6 +187,16 @@ def crear_indice(
             str(categoria)
         )
 
+        if porcentaje is None:
+            continue
+        
+        print(
+            "FILA:", fila,
+            "CATEGORIA:", categoria,
+            "PORCENTAJE:", porcentaje,
+            "TIPO:", type(porcentaje)
+        )
+        
         valor_limpio = str(
             porcentaje
         ).strip()
@@ -204,9 +214,20 @@ def crear_indice(
         if valor_limpio == "":
             continue
         
-        valores.append(
-            float(valor_limpio)
-        )
+        try:
+        
+            valores.append(
+                float(valor_limpio)
+            )
+        
+        except Exception:
+        
+            print(
+                "ERROR CON:",
+                valor_limpio
+            )
+        
+            continue
 
     from graficos.barras import (
         insertar_grafico_barras_l
