@@ -339,9 +339,9 @@ def crear_indice(
 
     pdf.line(
         20,
-        350,
+        290,
         575,
-        310
+        290
     )
 
     etiquetas_escolaridad = []
@@ -415,9 +415,9 @@ def crear_indice(
 
     pdf.line(
         20,
-        180,
+        85,
         575,
-        100
+        85
     )
 
     etiquetas_genero = []
