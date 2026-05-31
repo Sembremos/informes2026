@@ -48,7 +48,7 @@ GRAFICO_BARRAS_S = {
 
 GRAFICO_PASTEL_L = {
     "ancho": 500,
-    "alto": 280,
+    "alto": 500,
     "colores": [
         "#0e2f50",
         "#31a908",
@@ -63,7 +63,7 @@ GRAFICO_PASTEL_L = {
 
 GRAFICO_PASTEL_M = {
     "ancho": 350,
-    "alto": 220,
+    "alto": 350,
     "colores": [
         "#0e2f50",
         "#31a908",
@@ -78,7 +78,7 @@ GRAFICO_PASTEL_M = {
 
 GRAFICO_PASTEL_S = {
     "ancho": 220,
-    "alto": 160,
+    "alto": 220,
     "colores": [
         "#0e2f50",
         "#31a908",
