@@ -19,7 +19,7 @@ def crear_intro(pdf):
     TITULO_Y = 750
 
     PARRAFO_X = 40
-    PARRAFO_Y = 550
+    PARRAFO_Y = 540
     PARRAFO_ANCHO = 515
     PARRAFO_ALTO = 220
 
