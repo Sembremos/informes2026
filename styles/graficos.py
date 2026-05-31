@@ -16,7 +16,7 @@ GRAFICO_BARRAS_L = {
     ],
     "fuente_etiquetas": 4,
     "fuente_texto": 4,
-    "fuente_titulo": 6
+    "fuente_titulo": 8
 }
 
 GRAFICO_BARRAS_M = {
@@ -27,7 +27,7 @@ GRAFICO_BARRAS_M = {
     ],
     "fuente_etiquetas": 4,
     "fuente_texto": 4,
-    "fuente_titulo": 6
+    "fuente_titulo": 8
 }
 
 GRAFICO_BARRAS_S = {
@@ -38,7 +38,7 @@ GRAFICO_BARRAS_S = {
     ],
     "fuente_etiquetas": 4,
     "fuente_texto": 4,
-    "fuente_titulo": 6
+    "fuente_titulo": 8
 }
 
 
@@ -58,7 +58,7 @@ GRAFICO_PASTEL_L = {
     ],
     "fuente_etiquetas": 4,
     "fuente_texto": 4,
-    "fuente_titulo": 6
+    "fuente_titulo": 8
 }
 
 GRAFICO_PASTEL_M = {
@@ -73,7 +73,7 @@ GRAFICO_PASTEL_M = {
     ],
     "fuente_etiquetas": 4,
     "fuente_texto": 4,
-    "fuente_titulo": 6
+    "fuente_titulo": 8
 }
 
 GRAFICO_PASTEL_S = {
@@ -88,7 +88,7 @@ GRAFICO_PASTEL_S = {
     ],
     "fuente_etiquetas": 4,
     "fuente_texto": 4,
-    "fuente_titulo": 6
+    "fuente_titulo": 8
 }
 
 
@@ -105,5 +105,5 @@ GRAFICO_LINEA = {
     ],
     "fuente_etiquetas": 4,
     "fuente_texto": 4,
-    "fuente_titulo": 6
+    "fuente_titulo": 8
 }
