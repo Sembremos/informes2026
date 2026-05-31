@@ -474,7 +474,7 @@ def crear_indice(
         valores_genero,
         "Participación por Genero",
         30,
-        150
+        100
     )
 
     dibujar_tabla(
@@ -482,5 +482,5 @@ def crear_indice(
         tabla_genero,
         TABLA_M,
         300,
-        280
+        200
     )
