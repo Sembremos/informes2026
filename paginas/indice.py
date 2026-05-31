@@ -341,7 +341,7 @@ def crear_indice(
         20,
         350,
         575,
-        350
+        310
     )
 
     etiquetas_escolaridad = []
@@ -417,7 +417,7 @@ def crear_indice(
         20,
         180,
         575,
-        180
+        100
     )
 
     etiquetas_genero = []
