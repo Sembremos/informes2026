@@ -42,12 +42,6 @@ def _crear_pastel(
 
     ax.axis("equal")
 
-    ax.legend(
-        etiquetas,
-        loc="center left",
-        bbox_to_anchor=(1.05, 0.5),
-        fontsize=8
-    )
 
     ax.set_title(
 
