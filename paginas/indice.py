@@ -313,9 +313,9 @@ def crear_indice(
         valores_edad,
         frecuencias_edad,
         "Participación por Edad",
-        grafico_x=30,
+        grafico_x=50,
         grafico_y=555,
-        leyenda_x=300,
+        leyenda_x=350,
         leyenda_y=690
     )
 
@@ -375,9 +375,9 @@ def crear_indice(
         valores_escolaridad,
         frecuencias_escolaridad,
         "Participación por Escolaridad",
-        grafico_x=30,
+        grafico_x=50,
         grafico_y=325,
-        leyenda_x=300,
+        leyenda_x=350,
         leyenda_y=470
     )
 
@@ -387,9 +387,9 @@ def crear_indice(
 
     pdf.line(
         20,
-        70, #85
+        50, #85
         575,
-        70
+        50
     )
 
     etiquetas_genero = []
@@ -437,8 +437,8 @@ def crear_indice(
         valores_genero,
         frecuencias_genero,
         "Participación por Genero",
-        grafico_x=30,
+        grafico_x=35,
         grafico_y=80,
-        leyenda_x=300,
+        leyenda_x=350,
         leyenda_y=190
     )
