@@ -197,22 +197,34 @@ def crear_indice(
             "TIPO:", type(porcentaje)
         )
         
-        valor_limpio = str(
-            porcentaje
-        ).strip()
-        
-        valor_limpio = valor_limpio.replace(
-            "%",
-            ""
-        )
-        
-        valor_limpio = valor_limpio.replace(
-            ",",
-            "."
-        )
-        
-        if valor_limpio == "":
+        if porcentaje is None:
             continue
+        
+        try:
+        
+            valores.append(
+                float(porcentaje)
+            )
+        
+        except:
+        
+            valor_limpio = str(
+                porcentaje
+            ).replace(
+                "%",
+                ""
+            )
+        
+            valor_limpio = valor_limpio.replace(
+                ",",
+                "."
+            )
+        
+            valores.append(
+                float(
+                    valor_limpio
+                )
+            )
         
         try:
         
