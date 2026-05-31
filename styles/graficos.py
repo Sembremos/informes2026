@@ -36,8 +36,8 @@ GRAFICO_BARRAS_S = {
     "colores": [
         "#31a908"
     ],
-    "fuente_etiquetas": 4,
-    "fuente_texto": 4,
+    "fuente_etiquetas": 5,
+    "fuente_texto": 5,
     "fuente_titulo": 7
 }
 
@@ -56,8 +56,8 @@ GRAFICO_PASTEL_L = {
         "#62d939",
         "#116bc5"
     ],
-    "fuente_etiquetas": 4,
-    "fuente_texto": 4,
+    "fuente_etiquetas": 5,
+    "fuente_texto": 5,
     "fuente_titulo": 7
 }
 
@@ -71,8 +71,8 @@ GRAFICO_PASTEL_M = {
         "#62d939",
         "#116bc5"
     ],
-    "fuente_etiquetas": 4,
-    "fuente_texto": 4,
+    "fuente_etiquetas": 5,
+    "fuente_texto": 5,
     "fuente_titulo": 7
 }
 
@@ -86,8 +86,8 @@ GRAFICO_PASTEL_S = {
         "#62d939",
         "#116bc5"
     ],
-    "fuente_etiquetas": 4,
-    "fuente_texto": 4,
+    "fuente_etiquetas": 5,
+    "fuente_texto": 5,
     "fuente_titulo": 7
 }
 
@@ -103,7 +103,7 @@ GRAFICO_LINEA = {
         "#0e2f50",
         "#31a908"
     ],
-    "fuente_etiquetas": 4,
-    "fuente_texto": 4,
+    "fuente_etiquetas": 5,
+    "fuente_texto": 5,
     "fuente_titulo": 7
 }
