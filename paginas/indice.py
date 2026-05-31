@@ -304,9 +304,9 @@ def crear_indice(
 
         if porcentaje is None:
             continue
-        
+
         valores_edad.append(
-            float(porcentaje)
+            float(porcentaje) * 100
         )
 
         tabla_edad.append(
@@ -329,11 +329,11 @@ def crear_indice(
         pdf,
         tabla_edad,
         TABLA_M,
-        330,
-        690
+        300,
+        700
     )
 
-    # =====================================
+        # =====================================
     # ESCOLARIDAD
     # =====================================
 
@@ -380,9 +380,9 @@ def crear_indice(
 
         if porcentaje is None:
             continue
-        
+
         valores_escolaridad.append(
-            float(porcentaje)
+            float(porcentaje) * 100
         )
 
         tabla_escolaridad.append(
@@ -405,11 +405,11 @@ def crear_indice(
         pdf,
         tabla_escolaridad,
         TABLA_M,
-        330,
-        520
+        300,
+        530
     )
-
-    # =====================================
+    
+        # =====================================
     # GENERO
     # =====================================
 
@@ -456,9 +456,9 @@ def crear_indice(
 
         if porcentaje is None:
             continue
-            
+
         valores_genero.append(
-            float(porcentaje)
+            float(porcentaje) * 100
         )
 
         tabla_genero.append(
@@ -481,8 +481,6 @@ def crear_indice(
         pdf,
         tabla_genero,
         TABLA_M,
-        330,
-        350
+        300,
+        360
     )
-
-    pdf.showPage()
