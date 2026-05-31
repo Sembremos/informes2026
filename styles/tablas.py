@@ -10,9 +10,9 @@ TABLA_L1 = {
     "color_texto_header": "#FFFFFF",
     "color_borde": "#787878",
     "alto_fila": 22,
-    "fuente_header": 15,
-    "fuente_texto": 12,
-    "fuente_titulo": 15
+    "fuente_header": 12,
+    "fuente_texto": 9,
+    "fuente_titulo": 12
 }
 
 TABLA_L2 = {
@@ -21,9 +21,9 @@ TABLA_L2 = {
     "color_texto_header": "#FFFFFF",
     "color_borde": "#787878",
     "alto_fila": 22,
-    "fuente_header": 15,
-    "fuente_texto": 12,
-    "fuente_titulo": 15
+    "fuente_header": 12,
+    "fuente_texto": 9,
+    "fuente_titulo": 12
 }
 
 TABLA_L3 = {
@@ -33,9 +33,9 @@ TABLA_L3 = {
     "color_texto_header": "#FFFFFF",
     "color_borde": "#787878",
     "alto_fila": 22,
-    "fuente_header": 15,
-    "fuente_texto": 12,
-    "fuente_titulo": 15
+    "fuente_header": 12,
+    "fuente_texto": 9,
+    "fuente_titulo": 12
 }
 
 
@@ -49,7 +49,7 @@ TABLA_M = {
     "color_texto_header": "#FFFFFF",
     "color_borde": "#787878",
     "alto_fila": 22,
-    "fuente_header": 15,
-    "fuente_texto": 12,
-    "fuente_titulo": 15
+    "fuente_header": 12,
+    "fuente_texto": 9,
+    "fuente_titulo": 12
 }
