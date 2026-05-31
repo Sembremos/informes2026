@@ -2,6 +2,7 @@ import tempfile
 
 import matplotlib.pyplot as plt
 
+from reportlab.lib import colors
 
 from styles.graficos import (
     GRAFICO_PASTEL_L,
@@ -14,17 +15,20 @@ def _crear_pastel(
     pdf,
     etiquetas,
     valores,
+    frecuencias,
     titulo,
     estilo,
-    x,
-    y
+    grafico_x,
+    grafico_y,
+    leyenda_x=None,
+    leyenda_y=None
 ):
 
     lado = max(
         estilo["ancho"],
         estilo["alto"]
     )
-    
+
     fig, ax = plt.subplots(
         figsize=(
             lado / 100,
@@ -42,23 +46,16 @@ def _crear_pastel(
 
     ax.axis("equal")
 
-
     ax.set_title(
-
         titulo,
-
         fontsize=estilo[
             "fuente_titulo"
         ]
-
     )
 
     temp = tempfile.NamedTemporaryFile(
-
         suffix=".png",
-
         delete=False
-
     )
 
     plt.tight_layout()
@@ -71,37 +68,91 @@ def _crear_pastel(
     plt.close()
 
     pdf.drawImage(
-
         temp.name,
-
-        x,
-
-        y,
-
+        grafico_x,
+        grafico_y,
         width=estilo["ancho"],
-
         height=estilo["alto"]
-
     )
+
+    # ==========================
+    # LEYENDA
+    # ==========================
+
+    if (
+        leyenda_x is not None
+        and
+        leyenda_y is not None
+    ):
+
+        pdf.setFont(
+            "Helvetica",
+            8
+        )
+
+        y_actual = leyenda_y
+
+        colores_grafico = estilo[
+            "colores"
+        ]
+
+        for i in range(
+            len(etiquetas)
+        ):
+
+            color = colores_grafico[
+                i % len(colores_grafico)
+            ]
+
+            pdf.setFillColor(
+                colors.HexColor(color)
+            )
+
+            pdf.rect(
+                leyenda_x,
+                y_actual - 7,
+                8,
+                8,
+                fill=1,
+                stroke=0
+            )
+
+            pdf.setFillColor(
+                colors.black
+            )
+
+            pdf.drawString(
+                leyenda_x + 14,
+                y_actual - 2,
+                f"{etiquetas[i]} ({frecuencias[i]})"
+            )
+
+            y_actual -= 14
 
 
 def insertar_grafico_pastel_l(
     pdf,
     etiquetas,
     valores,
+    frecuencias,
     titulo,
-    x,
-    y
+    grafico_x,
+    grafico_y,
+    leyenda_x=None,
+    leyenda_y=None
 ):
 
     _crear_pastel(
         pdf,
         etiquetas,
         valores,
+        frecuencias,
         titulo,
         GRAFICO_PASTEL_L,
-        x,
-        y
+        grafico_x,
+        grafico_y,
+        leyenda_x,
+        leyenda_y
     )
 
 
@@ -109,19 +160,25 @@ def insertar_grafico_pastel_m(
     pdf,
     etiquetas,
     valores,
+    frecuencias,
     titulo,
-    x,
-    y
+    grafico_x,
+    grafico_y,
+    leyenda_x=None,
+    leyenda_y=None
 ):
 
     _crear_pastel(
         pdf,
         etiquetas,
         valores,
+        frecuencias,
         titulo,
         GRAFICO_PASTEL_M,
-        x,
-        y
+        grafico_x,
+        grafico_y,
+        leyenda_x,
+        leyenda_y
     )
 
 
@@ -129,18 +186,23 @@ def insertar_grafico_pastel_s(
     pdf,
     etiquetas,
     valores,
+    frecuencias,
     titulo,
-    x,
-    y
+    grafico_x,
+    grafico_y,
+    leyenda_x=None,
+    leyenda_y=None
 ):
 
     _crear_pastel(
         pdf,
         etiquetas,
         valores,
+        frecuencias,
         titulo,
         GRAFICO_PASTEL_S,
-        x,
-        y
+        grafico_x,
+        grafico_y,
+        leyenda_x,
+        leyenda_y
     )
-    
