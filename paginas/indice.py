@@ -322,7 +322,7 @@ def crear_indice(
         valores_edad,
         "Participación por Edad",
         30,
-        500
+        545
     )
 
     dibujar_tabla(
@@ -330,10 +330,10 @@ def crear_indice(
         tabla_edad,
         TABLA_M,
         300,
-        660
+        700
     )
 
-        # =====================================
+    # =====================================
     # ESCOLARIDAD
     # =====================================
 
@@ -398,7 +398,7 @@ def crear_indice(
         valores_escolaridad,
         "Participación por Escolaridad",
         30,
-        325
+        375
     )
 
     dibujar_tabla(
@@ -406,10 +406,10 @@ def crear_indice(
         tabla_escolaridad,
         TABLA_M,
         300,
-        490
+        535
     )
     
-        # =====================================
+     # =====================================
     # GENERO
     # =====================================
 
@@ -474,7 +474,7 @@ def crear_indice(
         valores_genero,
         "Participación por Genero",
         30,
-        155
+        200
     )
 
     dibujar_tabla(
@@ -482,5 +482,5 @@ def crear_indice(
         tabla_genero,
         TABLA_M,
         300,
-        305
+        350
     )
