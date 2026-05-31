@@ -115,6 +115,11 @@ def crear_indice(
         ].value
 
         if distrito is None:
+
+            continue
+        
+        if str(distrito).strip() == "":
+        
             continue
 
         datos_tabla.append(
@@ -171,6 +176,11 @@ def crear_indice(
         ].value
 
         if categoria is None:
+        
+            continue
+        
+        if str(categoria).strip() == "":
+        
             continue
 
         categorias.append(
@@ -179,25 +189,23 @@ def crear_indice(
 
         valor_limpio = str(
             porcentaje
-        ).replace(
+        ).strip()
+        
+        valor_limpio = valor_limpio.replace(
             "%",
             ""
         )
-
+        
         valor_limpio = valor_limpio.replace(
             ",",
             "."
         )
-        #test...................................................
-        print(
-            "PORCENTAJE:",
-            porcentaje
-        )
-        #.......................................................
+        
+        if valor_limpio == "":
+            continue
+        
         valores.append(
-            float(
-                valor_limpio
-            )
+            float(valor_limpio)
         )
 
     from graficos.barras import (
