@@ -36,12 +36,33 @@ def _crear_pastel(
         )
     )
 
-    ax.pie(
+    wedges, texts, autotexts = ax.pie(
         valores,
         labels=None,
         autopct="%1.0f%%",
         colors=estilo["colores"],
         radius=1
+    )
+
+    for texto in autotexts:
+
+    texto.set_color("black")
+
+    texto.set_fontweight(
+        "bold"
+    )
+
+    texto.set_fontsize(
+        estilo["fuente_etiquetas"]
+    )
+
+    texto.set_bbox(
+        dict(
+            facecolor="white",
+            edgecolor="none",
+            alpha=0.75,
+            boxstyle="round,pad=0.25"
+        )
     )
 
     ax.axis("equal")
