@@ -162,7 +162,7 @@ def crear_indice(
 
     pdf.drawString(
         40,
-        330,
+        350,
         "Relación por Distrito"
     )
 
@@ -230,7 +230,7 @@ def crear_indice(
         valores,
         "Participación por Distrito",
         40,
-        40
+        60
     )
 
     pdf.showPage()
