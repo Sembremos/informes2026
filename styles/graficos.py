@@ -62,8 +62,8 @@ GRAFICO_PASTEL_L = {
 }
 
 GRAFICO_PASTEL_M = {
-    "ancho": 350,
-    "alto": 350,
+    "ancho": 220,
+    "alto": 220,
     "colores": [
         "#0e2f50",
         "#31a908",
@@ -77,8 +77,8 @@ GRAFICO_PASTEL_M = {
 }
 
 GRAFICO_PASTEL_S = {
-    "ancho": 220,
-    "alto": 220,
+    "ancho": 170,
+    "alto": 170,
     "colores": [
         "#0e2f50",
         "#31a908",
