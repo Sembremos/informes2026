@@ -208,22 +208,11 @@ def crear_indice(
         
         except:
         
-            valor_limpio = str(
-                porcentaje
-            ).replace(
-                "%",
-                ""
-            )
-        
-            valor_limpio = valor_limpio.replace(
-                ",",
-                "."
-            )
-        
+            if porcentaje is None:
+                continue
+            
             valores.append(
-                float(
-                    valor_limpio
-                )
+                float(porcentaje)
             )
         
         try:
@@ -330,22 +319,11 @@ def crear_indice(
             str(categoria)
         )
 
-        valor_limpio = str(
-            porcentaje
-        ).replace(
-            "%",
-            ""
-        )
-
-        valor_limpio = valor_limpio.replace(
-            ",",
-            "."
-        )
-
-        valores_edad.append(
-            float(
-                valor_limpio
-            )
+        if porcentaje is None:
+            continue
+        
+        valores.append(
+            float(porcentaje)
         )
 
         tabla_edad.append(
@@ -417,22 +395,11 @@ def crear_indice(
             str(categoria)
         )
 
-        valor_limpio = str(
-            porcentaje
-        ).replace(
-            "%",
-            ""
-        )
-
-        valor_limpio = valor_limpio.replace(
-            ",",
-            "."
-        )
-
-        valores_escolaridad.append(
-            float(
-                valor_limpio
-            )
+        if porcentaje is None:
+            continue
+        
+        valores.append(
+            float(porcentaje)
         )
 
         tabla_escolaridad.append(
@@ -504,22 +471,11 @@ def crear_indice(
             str(categoria)
         )
 
-        valor_limpio = str(
-            porcentaje
-        ).replace(
-            "%",
-            ""
-        )
-
-        valor_limpio = valor_limpio.replace(
-            ",",
-            "."
-        )
-
-        valores_genero.append(
-            float(
-                valor_limpio
-            )
+        if porcentaje is None:
+            continue
+        
+        valores.append(
+            float(porcentaje)
         )
 
         tabla_genero.append(
