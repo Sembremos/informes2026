@@ -6,6 +6,7 @@ from reportlab.lib.pagesizes import A4
 
 from datos.lector_excel import leer_datos_generales
 from paginas.subportada import crear_subportada
+from paginas.intro import crear_intro
 
 
 def generar_pdf(archivo_excel):
@@ -43,6 +44,11 @@ def generar_pdf(archivo_excel):
         datos["canton"]
     )
 
+    # pagina intro
+    crear_intro(pdf)
+
+    
+    #generacion pdf
     pdf.save()
 
     buffer.seek(0)
