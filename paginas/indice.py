@@ -89,10 +89,15 @@ def crear_indice(
     # TABLA DISTRITO
     # ==========================
 
-    datos_tabla = []
-
+    datos_tabla = [
+    [
+        "Distrito",
+        "Porcentajes",
+        "Frecuencia"
+    ]
+]
     for fila in range(
-        7,
+        8,
         24
     ):
 
