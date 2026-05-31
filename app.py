@@ -7,6 +7,7 @@ from reportlab.lib.pagesizes import A4
 from datos.lector_excel import leer_datos_generales
 from paginas.subportada import crear_subportada
 from paginas.intro import crear_intro
+from paginas.indice import crear_indice
 
 
 def generar_pdf(archivo_excel):
@@ -46,8 +47,11 @@ def generar_pdf(archivo_excel):
 
     # pagina intro
     crear_intro(pdf)
-
-    
+    #participacion
+    crear_indice(
+        pdf,
+        archivo_excel
+    )
     #generacion pdf
     pdf.save()
 
