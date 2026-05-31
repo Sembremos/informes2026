@@ -20,30 +20,31 @@ def _crear_pastel(
     y
 ):
 
+    lado = max(
+        estilo["ancho"],
+        estilo["alto"]
+    )
+    
     fig, ax = plt.subplots(
-
         figsize=(
-
-            estilo["ancho"] / 100,
-
-            estilo["alto"] / 100
-
+            lado / 100,
+            lado / 100
         )
-
     )
 
     ax.pie(
-
         valores,
-
-        labels=etiquetas,
-
+        labels=None,
         autopct="%1.0f%%",
+        colors=estilo["colores"],
+        radius=1
+    )
 
-        colors=estilo[
-            "colores"
-        ]
-
+    ax.legend(
+        etiquetas,
+        loc="center left",
+        bbox_to_anchor=(1.05, 0.5),
+        fontsize=8
     )
 
     ax.set_title(
@@ -66,14 +67,9 @@ def _crear_pastel(
 
     plt.tight_layout()
 
-    plt.savefig(
-
+    pplt.savefig(
         temp.name,
-
-        dpi=300,
-
-        bbox_inches="tight"
-
+        dpi=300
     )
 
     plt.close()
