@@ -2,16 +2,20 @@ import tempfile
 
 import matplotlib.pyplot as plt
 
+
 from styles.graficos import (
-    GRAFICO_BARRAS_L
+    GRAFICO_BARRAS_L,
+    GRAFICO_BARRAS_M,
+    GRAFICO_BARRAS_S
 )
 
 
-def insertar_grafico_barras_l(
+def _crear_grafico(
     pdf,
     categorias,
     valores,
     titulo,
+    estilo,
     x,
     y
 ):
@@ -20,9 +24,9 @@ def insertar_grafico_barras_l(
 
         figsize=(
 
-            GRAFICO_BARRAS_L["ancho"] / 100,
+            estilo["ancho"] / 100,
 
-            GRAFICO_BARRAS_L["alto"] / 100
+            estilo["alto"] / 100
 
         )
 
@@ -34,7 +38,7 @@ def insertar_grafico_barras_l(
 
         valores,
 
-        color=GRAFICO_BARRAS_L["colores"][
+        color=estilo["colores"][
             :len(categorias)
         ]
 
@@ -44,8 +48,28 @@ def insertar_grafico_barras_l(
 
         titulo,
 
-        fontsize=GRAFICO_BARRAS_L[
+        fontsize=estilo[
             "fuente_titulo"
+        ]
+
+    )
+
+    ax.tick_params(
+
+        axis="x",
+
+        labelsize=estilo[
+            "fuente_etiquetas"
+        ]
+
+    )
+
+    ax.tick_params(
+
+        axis="y",
+
+        labelsize=estilo[
+            "fuente_texto"
         ]
 
     )
@@ -101,8 +125,68 @@ def insertar_grafico_barras_l(
 
         y,
 
-        width=GRAFICO_BARRAS_L["ancho"],
+        width=estilo["ancho"],
 
-        height=GRAFICO_BARRAS_L["alto"]
+        height=estilo["alto"]
 
+    )
+
+
+def insertar_grafico_barras_l(
+    pdf,
+    categorias,
+    valores,
+    titulo,
+    x,
+    y
+):
+
+    _crear_grafico(
+        pdf,
+        categorias,
+        valores,
+        titulo,
+        GRAFICO_BARRAS_L,
+        x,
+        y
+    )
+
+
+def insertar_grafico_barras_m(
+    pdf,
+    categorias,
+    valores,
+    titulo,
+    x,
+    y
+):
+
+    _crear_grafico(
+        pdf,
+        categorias,
+        valores,
+        titulo,
+        GRAFICO_BARRAS_M,
+        x,
+        y
+    )
+
+
+def insertar_grafico_barras_s(
+    pdf,
+    categorias,
+    valores,
+    titulo,
+    x,
+    y
+):
+
+    _crear_grafico(
+        pdf,
+        categorias,
+        valores,
+        titulo,
+        GRAFICO_BARRAS_S,
+        x,
+        y
     )
