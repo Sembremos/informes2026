@@ -98,7 +98,7 @@ def crear_indice(
     ]
 
     for fila in range(
-        8,
+        7,
         12
     ):
 
@@ -163,7 +163,7 @@ def crear_indice(
     valores = []
 
     for fila in range(
-        7,
+        8,
         12
     ):
 
@@ -197,8 +197,6 @@ def crear_indice(
             "TIPO:", type(porcentaje)
         )
         
-        if porcentaje is None:
-            continue
         
         try:
         
@@ -214,21 +212,6 @@ def crear_indice(
             valores.append(
                 float(porcentaje)
             )
-        
-        try:
-        
-            valores.append(
-                float(valor_limpio)
-            )
-        
-        except Exception:
-        
-            print(
-                "ERROR CON:",
-                valor_limpio
-            )
-        
-            continue
 
     from graficos.barras import (
         insertar_grafico_barras_l
@@ -322,7 +305,7 @@ def crear_indice(
         if porcentaje is None:
             continue
         
-        valores.append(
+        valores_edad.append(
             float(porcentaje)
         )
 
@@ -398,7 +381,7 @@ def crear_indice(
         if porcentaje is None:
             continue
         
-        valores.append(
+        valores_escolaridad.append(
             float(porcentaje)
         )
 
@@ -473,8 +456,8 @@ def crear_indice(
 
         if porcentaje is None:
             continue
-        
-        valores.append(
+            
+        valores_genero.append(
             float(porcentaje)
         )
 
