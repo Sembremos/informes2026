@@ -89,7 +89,7 @@ def _crear_grafico(
     
             barra.get_height(),
     
-            f"{valor:.2f}%",
+            f"{valor * 100:.2f}%"
     
             ha="center",
     
