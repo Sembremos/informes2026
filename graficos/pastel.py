@@ -46,24 +46,24 @@ def _crear_pastel(
 
     for texto in autotexts:
 
-    texto.set_color("black")
-
-    texto.set_fontweight(
-        "bold"
-    )
-
-    texto.set_fontsize(
-        estilo["fuente_etiquetas"]
-    )
-
-    texto.set_bbox(
-        dict(
-            facecolor="white",
-            edgecolor="none",
-            alpha=0.75,
-            boxstyle="round,pad=0.25"
+        texto.set_color("black")
+    
+        texto.set_fontweight(
+            "bold"
         )
-    )
+    
+        texto.set_fontsize(
+            estilo["fuente_etiquetas"]
+        )
+    
+        texto.set_bbox(
+            dict(
+                facecolor="white",
+                edgecolor="none",
+                alpha=0.75,
+                boxstyle="round,pad=0.25"
+            )
+        )
 
     ax.axis("equal")
 
