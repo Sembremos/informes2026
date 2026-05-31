@@ -170,7 +170,7 @@ def crear_indice(
     valores = []
 
     for fila in range(
-        7,
+        8,
         12
     ):
 
