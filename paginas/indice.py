@@ -92,7 +92,7 @@ def crear_indice(
     datos_tabla = []
 
     for fila in range(
-        8,
+        7,
         24
     ):
 
@@ -137,7 +137,7 @@ def crear_indice(
         datos_tabla,
         TABLA_L3,
         40,
-        650
+        670
     )
 
     # ==========================
@@ -157,7 +157,7 @@ def crear_indice(
 
     pdf.drawString(
         40,
-        310,
+        330,
         "Relación por Distrito"
     )
 
@@ -165,8 +165,8 @@ def crear_indice(
     valores = []
 
     for fila in range(
-        8,
-        24
+        7,
+        12
     ):
 
         categoria = hoja[
@@ -225,7 +225,7 @@ def crear_indice(
         valores,
         "Participación por Distrito",
         40,
-        20
+        40
     )
 
     pdf.showPage()
