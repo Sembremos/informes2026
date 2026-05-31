@@ -17,7 +17,7 @@ def crear_subportada(pdf, delegacion, canton):
 
     pdf.drawCentredString(
         ancho / 2,
-        850,
+        750,
         "DELEGACIÓN POLICIAL"
     )
 
@@ -25,7 +25,7 @@ def crear_subportada(pdf, delegacion, canton):
 
     pdf.drawCentredString(
         ancho / 2,
-        810,
+        710,
         str(delegacion)
     )
 
@@ -33,7 +33,7 @@ def crear_subportada(pdf, delegacion, canton):
 
     pdf.drawCentredString(
         ancho / 2,
-        765,
+        685,
         str(canton)
     )
 
