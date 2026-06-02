@@ -80,16 +80,16 @@ def crear_metodologia(
     TITULO_Y = 750
 
     TEXTO_X = 40
-    TEXTO_Y = 700
+    TEXTO_Y = 715
 
     TEXTO_ANCHO = 500
     TEXTO_ALTO = 40
 
     TABLA_COMUNIDAD_X = 40
-    TABLA_COMUNIDAD_Y = 690
+    TABLA_COMUNIDAD_Y = 700
 
     TABLA_OTRAS_X = 40
-    TABLA_OTRAS_Y = 630
+    TABLA_OTRAS_Y = 660
 
     NETQUEST_X = 205
     NETQUEST_Y = 280
@@ -171,7 +171,7 @@ def crear_metodologia(
 
     for fila in range(
         59,
-        61
+        62
     ):
 
         datos_comunidad.append(
