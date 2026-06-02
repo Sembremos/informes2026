@@ -80,16 +80,16 @@ def crear_metodologia(
     TITULO_Y = 750
 
     TEXTO_X = 40
-    TEXTO_Y = 680
+    TEXTO_Y = 700
 
     TEXTO_ANCHO = 500
     TEXTO_ALTO = 40
 
     TABLA_COMUNIDAD_X = 40
-    TABLA_COMUNIDAD_Y = 640
+    TABLA_COMUNIDAD_Y = 690
 
     TABLA_OTRAS_X = 40
-    TABLA_OTRAS_Y = 535
+    TABLA_OTRAS_Y = 630
 
     NETQUEST_X = 205
     NETQUEST_Y = 280
@@ -315,19 +315,19 @@ def crear_metodologia(
 
     for fila in range(
         63,
-        79
+        65
     ):
 
         valor_a = hoja[
-            f"A{fila}"
+            f"G{fila}"
         ].value
 
         valor_c = hoja[
-            f"C{fila}"
+            f"I{fila}"
         ].value
 
         valor_d = hoja[
-            f"D{fila}"
+            f"J{fila}"
         ].value
 
         if (
