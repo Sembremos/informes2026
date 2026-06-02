@@ -48,95 +48,103 @@ def crear_indice(
     # ==========================
     # PÁGINA DISTRITO
     # ==========================
-
+    
+    def formatear_nombre(texto):
+        return (
+            str(texto)
+            .replace("_", " ")
+            .upper()
+        )
+    
     dibujar_header_footer(pdf)
-
+    
     pdf.setFillColor(
         colors.HexColor(
             TITULO_2["color"]
         )
     )
-
+    
     pdf.setFont(
         "Helvetica-Bold",
         TITULO_2["tamano"]
     )
-
+    
     pdf.drawString(
         40,
         750,
         "Datos de Participación"
     )
-
+    
     pdf.setFillColor(
         colors.HexColor(
             Subti["color"]
         )
     )
-
+    
     pdf.setFont(
         "Helvetica-Bold",
         Subti["tamano"]
     )
-
+    
     pdf.drawString(
         40,
         700,
         "Participación por Distrito"
     )
-
+    
     # ==========================
     # TABLA DISTRITO
     # ==========================
-
+    
     datos_tabla = [
-    [
-        "Distrito",
-        "Porcentajes",
-        "Frecuencia"
+        [
+            "Distrito",
+            "Porcentajes",
+            "Frecuencia"
+        ]
     ]
-]
+    
     for fila in range(
         8,
         24
     ):
-
+    
         distrito = hoja[
             f"A{fila}"
         ].value
-
+    
         porcentaje = hoja[
             f"B{fila}"
         ].value
-
+    
         frecuencia = hoja[
             f"C{fila}"
         ].value
-
+    
         if distrito is None:
-
+    
             continue
-        
+    
         if str(distrito).strip() == "":
-        
+    
             continue
-
+    
         porcentaje_pdf = ""
-
+    
         if porcentaje is not None:
-        
+    
             porcentaje_pdf = (
                 f"{float(porcentaje) * 100:.2f}%"
             )
-        
+    
         datos_tabla.append(
             [
-                str(distrito),
+                formatear_nombre(distrito),
                 porcentaje_pdf,
                 str(frecuencia)
             ]
         )
-
+    
     dibujar_tabla(
         pdf,
         datos_tabla,
@@ -144,86 +152,87 @@ def crear_indice(
         40,
         670
     )
-
+    
     # ==========================
     # RELACIÓN POR DISTRITO
     # ==========================
-
+    
     pdf.setFillColor(
         colors.HexColor(
             Subti["color"]
         )
     )
-
+    
     pdf.setFont(
         "Helvetica-Bold",
         Subti["tamano"]
     )
-
+    
     pdf.drawString(
         40,
         350,
         "Relación por Distrito"
     )
-
+    
     categorias = []
     valores = []
-
+    
     for fila in range(
         8,
         12
     ):
-
+    
         categoria = hoja[
             f"G{fila}"
         ].value
-
+    
         porcentaje = hoja[
             f"H{fila}"
         ].value
-
+    
         if categoria is None:
-        
+    
             continue
-        
+    
         if str(categoria).strip() == "":
-        
+    
             continue
-
+    
         categorias.append(
-            str(categoria)
+            formatear_nombre(categoria)
         )
-
+    
         if porcentaje is None:
+    
             continue
-        
+    
         print(
             "FILA:", fila,
             "CATEGORIA:", categoria,
             "PORCENTAJE:", porcentaje,
             "TIPO:", type(porcentaje)
         )
-        
-        
+    
         try:
-        
+    
             valores.append(
                 float(porcentaje)
             )
-        
+    
         except:
-        
+    
             if porcentaje is None:
+    
                 continue
-            
+    
             valores.append(
                 float(porcentaje)
             )
-
+    
     from graficos.barras import (
         insertar_grafico_barras_l
     )
-
+    
     insertar_grafico_barras_l(
         pdf,
         categorias,
@@ -232,7 +241,7 @@ def crear_indice(
         40,
         60
     )
-
+    
     pdf.showPage()
 
     # ==========================
