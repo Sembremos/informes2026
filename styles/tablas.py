@@ -4,6 +4,7 @@
 # TABLAS GRANDES
 # ==========================
 
+#verde
 TABLA_L1 = {
     "ancho": 500,
     "color_header": "#31a908",
@@ -15,6 +16,7 @@ TABLA_L1 = {
     "fuente_titulo": 12
 }
 
+#azul
 TABLA_L2 = {
     "ancho": 500,
     "color_header": "#0e2f50",
@@ -26,6 +28,7 @@ TABLA_L2 = {
     "fuente_titulo": 12
 }
 
+#CON PRIMERA COLUMNA
 TABLA_L3 = {
     "ancho": 500,
     "color_header": "#31a908",
