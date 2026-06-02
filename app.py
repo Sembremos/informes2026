@@ -8,6 +8,9 @@ from datos.lector_excel import leer_datos_generales
 from paginas.subportada import crear_subportada
 from paginas.intro import crear_intro
 from paginas.indice import crear_indice
+from paginas.metodologia import (
+    crear_metodologia
+)
 
 
 def generar_pdf(archivo_excel):
@@ -52,6 +55,11 @@ def generar_pdf(archivo_excel):
         pdf,
         archivo_excel
     )
+    crear_metodologia(
+    pdf,
+    archivo_excel
+    )
+    
     #generacion pdf
     pdf.save()
 
