@@ -99,11 +99,11 @@ def crear_metodologia(
 
     LINEA_Y = 400
 
-    DATOS_X = 0
+    DATOS_X = 10
     DATOS_Y = 75
 
     DATOS_ANCHO = 550
-    DATOS_ALTO = 350
+    DATOS_ALTO = 300
 
     # ==================================================
     # TITULO
