@@ -179,7 +179,7 @@ def crear_metodologia(
 
     for fila in range(
         59,
-        62
+        61
     ):
 
         datos_comunidad.append(
@@ -323,7 +323,7 @@ def crear_metodologia(
 
     for fila in range(
         63,
-        65
+        66
     ):
 
         valor_a = hoja[
