@@ -92,14 +92,14 @@ def crear_metodologia(
     TABLA_OTRAS_Y = 600
 
     NETQUEST_ANCHO = 550
-    NETQUEST_ALTO = 115
+    NETQUEST_ALTO = 120
     
     NETQUEST_X = (
         ancho_pagina -
         NETQUEST_ANCHO
     ) / 2
     
-    NETQUEST_Y = 400
+    NETQUEST_Y = 390
 
     LINEA_Y = 380
     
