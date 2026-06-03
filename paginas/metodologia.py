@@ -89,18 +89,18 @@ def crear_metodologia(
     TABLA_COMUNIDAD_Y = 700
 
     TABLA_OTRAS_X = 40
-    TABLA_OTRAS_Y = 625
+    TABLA_OTRAS_Y = 600
 
-    NETQUEST_X = 40
+    NETQUEST_X = -20
     NETQUEST_Y = 570
 
     NETQUEST_ANCHO = 500
-    NETQUEST_ALTO = 150
+    NETQUEST_ALTO = 100
 
     LINEA_Y = 400
 
-    DATOS_X = 40
-    DATOS_Y = 80
+    DATOS_X = -20
+    DATOS_Y = 120
 
     DATOS_ANCHO = 500
     DATOS_ALTO = 300
