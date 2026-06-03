@@ -99,7 +99,7 @@ def crear_metodologia(
 
     LINEA_Y = 400
 
-    DATOS_X = 10
+    DATOS_X = 35
     DATOS_Y = 75
 
     DATOS_ANCHO = 550
