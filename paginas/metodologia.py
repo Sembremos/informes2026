@@ -104,7 +104,7 @@ def crear_metodologia(
     LINEA_Y = 400
     
     DATOS_ANCHO = 550
-    DATOS_ALTO = 300
+    DATOS_ALTO = 263
     
     DATOS_X = (
         ancho_pagina -
