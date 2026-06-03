@@ -111,7 +111,7 @@ def crear_metodologia(
         DATOS_ANCHO
     ) / 2
     
-    DATOS_Y = 75
+    DATOS_Y = 85
 
     # ==================================================
     # TITULO
@@ -515,20 +515,20 @@ def crear_metodologia(
     # POSICIONES EDITABLES
     # ==================================================
 
-    COMUNIDAD_X = 165
-    COMUNIDAD_Y = 185
+    COMUNIDAD_X = 155
+    COMUNIDAD_Y = 250
 
-    COMERCIO_X = 165
-    COMERCIO_Y = 95
+    COMERCIO_X = 135
+    COMERCIO_Y = 130
 
     POLICIAL_X = 425
-    POLICIAL_Y = 185
+    POLICIAL_Y = 250
 
-    ESTADISTICA_X = 425
-    ESTADISTICA_Y = 95
+    ESTADISTICA_X = 445
+    ESTADISTICA_Y = 130
 
-    TOTAL_X = 295
-    TOTAL_Y = 140
+    TOTAL_X = 300
+    TOTAL_Y = 180
 
     # ==================================================
     # ESTILO NUMEROS
