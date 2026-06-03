@@ -515,32 +515,32 @@ def crear_metodologia(
     # POSICIONES EDITABLES
     # ==================================================
 
-    COMUNIDAD_X = 155
-    COMUNIDAD_Y = 250
+    COMUNIDAD_X = 150
+    COMUNIDAD_Y = 260
 
-    COMERCIO_X = 135
-    COMERCIO_Y = 130
+    COMERCIO_X = 120
+    COMERCIO_Y = 140
 
     POLICIAL_X = 425
-    POLICIAL_Y = 250
+    POLICIAL_Y = 260
 
     ESTADISTICA_X = 445
-    ESTADISTICA_Y = 130
+    ESTADISTICA_Y = 140
 
     TOTAL_X = 300
-    TOTAL_Y = 180
+    TOTAL_Y = 160
 
     # ==================================================
     # ESTILO NUMEROS
     # ==================================================
 
     pdf.setFillColor(
-        colors.black
+        colors.white
     )
 
     pdf.setFont(
         "Helvetica-Bold",
-        18
+        24
     )
 
     pdf.drawCentredString(
