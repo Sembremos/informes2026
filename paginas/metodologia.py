@@ -516,19 +516,19 @@ def crear_metodologia(
     # ==================================================
 
     COMUNIDAD_X = 150
-    COMUNIDAD_Y = 260
+    COMUNIDAD_Y = 255
 
     COMERCIO_X = 120
-    COMERCIO_Y = 140
+    COMERCIO_Y = 135
 
     POLICIAL_X = 425
-    POLICIAL_Y = 260
+    POLICIAL_Y = 255
 
     ESTADISTICA_X = 445
-    ESTADISTICA_Y = 140
+    ESTADISTICA_Y = 135
 
     TOTAL_X = 300
-    TOTAL_Y = 160
+    TOTAL_Y = 145
 
     # ==================================================
     # ESTILO NUMEROS
