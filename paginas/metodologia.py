@@ -92,7 +92,7 @@ def crear_metodologia(
     TABLA_OTRAS_Y = 600
 
     NETQUEST_X =20
-    NETQUEST_Y = 300
+    NETQUEST_Y = 400
 
     NETQUEST_ANCHO = 550
     NETQUEST_ALTO = 125
@@ -100,10 +100,10 @@ def crear_metodologia(
     LINEA_Y = 400
 
     DATOS_X = 0
-    DATOS_Y = 90
+    DATOS_Y = 75
 
     DATOS_ANCHO = 550
-    DATOS_ALTO = 400
+    DATOS_ALTO = 350
 
     # ==================================================
     # TITULO
