@@ -629,10 +629,10 @@ def crear_metodologia(
     # -------------------------
     
     TABLA_DELITOS_X = 40
-    TABLA_DELITOS_Y = 470
+    TABLA_DELITOS_Y = 460
     
     TABLA_RIESGOS_X = 310
-    TABLA_RIESGOS_Y = 470
+    TABLA_RIESGOS_Y = 490
     
     TABLA_ANCHO = 240
     
@@ -641,16 +641,16 @@ def crear_metodologia(
     # -------------------------
     
     PORC_DELITOS_X = 160
-    PORC_DELITOS_Y = 510
+    PORC_DELITOS_Y = 85
     
     TOTAL_DELITOS_X = 160
-    TOTAL_DELITOS_Y = 100
+    TOTAL_DELITOS_Y = 510
     
     PORC_RIESGOS_X = 430
-    PORC_RIESGOS_Y = 510
+    PORC_RIESGOS_Y = 85
     
     TOTAL_RIESGOS_X = 430
-    TOTAL_RIESGOS_Y = 100
+    TOTAL_RIESGOS_Y = 510
     
     # ==================================================
     # TITULO
@@ -759,7 +759,18 @@ def crear_metodologia(
         ancho_pagina,
         LINEA_Y
     )
-    
+
+    #________________
+    #estilo tabla
+    #______________
+    estilo_tabla = ParagraphStyle(
+        "tabla",
+        fontName="Helvetica",
+        fontSize=TABLA_L1["fuente_texto"],
+        leading=10,
+        alignment=1
+    )    
+        
     # ==================================================
     # TABLA DELITOS
     # ==================================================
@@ -785,7 +796,12 @@ def crear_metodologia(
             continue
     
         datos_delitos.append(
-            [str(valor)]
+            [
+                Paragraph(
+                    str(valor),
+                    estilo_tabla
+                )
+            ]
         )
     
     cantidad_delitos = len(
@@ -809,7 +825,6 @@ def crear_metodologia(
         colWidths=[
             TABLA_ANCHO
         ],
-        rowHeights=alto_fila_delitos
     )
     
     tabla_delitos.setStyle(
@@ -923,7 +938,12 @@ def crear_metodologia(
             continue
     
         datos_riesgos.append(
-            [str(valor)]
+            [
+                Paragraph(
+                    str(valor),
+                    estilo_tabla
+                )
+            ]
         )
     
     cantidad_riesgos = len(
@@ -947,7 +967,6 @@ def crear_metodologia(
         colWidths=[
             TABLA_ANCHO
         ],
-        rowHeights=alto_fila_riesgos
     )
     
     tabla_riesgos.setStyle(
@@ -1053,13 +1072,13 @@ def crear_metodologia(
     pdf.drawCentredString(
         PORC_DELITOS_X,
         PORC_DELITOS_Y,
-        f"Total:{porcentaje_delitos}"
+        f"{float(porcentaje_delitos) * 100:.2f}%"
     )
     
     pdf.drawCentredString(
         PORC_RIESGOS_X,
         PORC_RIESGOS_Y,
-        f"Total:{porcentaje_riesgos}"
+        f"{float(porcentaje_riesgos) * 100:.2f}%"
     )
     
     # ==================================================
@@ -1080,11 +1099,11 @@ def crear_metodologia(
     pdf.drawCentredString(
         TOTAL_DELITOS_X,
         TOTAL_DELITOS_Y,
-        str(total_delitos)
+        f"Total:{total_delitos}"
     )
     
     pdf.drawCentredString(
         TOTAL_RIESGOS_X,
         TOTAL_RIESGOS_Y,
-        str(total_riesgos)
+        f"Total:{total_riesgos}"
     )
