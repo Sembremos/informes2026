@@ -629,7 +629,7 @@ def crear_metodologia(
     # -------------------------
     
     TABLA_DELITOS_X = 40
-    TABLA_DELITOS_Y = 460
+    TABLA_DELITOS_Y = 490
     
     TABLA_RIESGOS_X = 310
     TABLA_RIESGOS_Y = 490
@@ -641,16 +641,16 @@ def crear_metodologia(
     # -------------------------
     
     PORC_DELITOS_X = 160
-    PORC_DELITOS_Y = 510
+    PORC_DELITOS_Y = 85
     
     TOTAL_DELITOS_X = 160
-    TOTAL_DELITOS_Y = 85
+    TOTAL_DELITOS_Y = 510
     
     PORC_RIESGOS_X = 430
-    PORC_RIESGOS_Y = 510
+    PORC_RIESGOS_Y = 85
     
     TOTAL_RIESGOS_X = 430
-    TOTAL_RIESGOS_Y = 85
+    TOTAL_RIESGOS_Y = 510
     
     # ==================================================
     # TITULO
@@ -1072,13 +1072,13 @@ def crear_metodologia(
     pdf.drawCentredString(
         PORC_DELITOS_X,
         PORC_DELITOS_Y,
-        f"Total{porcentaje_delitos}"
+        f"Total: {porcentaje_delitos}"
     )
     
     pdf.drawCentredString(
         PORC_RIESGOS_X,
         PORC_RIESGOS_Y,
-        f"Total{porcentaje_riesgos}"
+        f"Total: {porcentaje_riesgos}"
     )
     
     # ==================================================
@@ -1092,8 +1092,8 @@ def crear_metodologia(
     )
     
     pdf.setFont(
-        "Helvetica",
-        12
+        "Helvetica-Bold",
+        15
     )
     
     pdf.drawCentredString(
@@ -1105,5 +1105,5 @@ def crear_metodologia(
     pdf.drawCentredString(
         TOTAL_RIESGOS_X,
         TOTAL_RIESGOS_Y,
-        f"{float(total_delitos) * 100:.2f}%"
+        f"{float(total_riesgos) * 100:.2f}%"
     )
