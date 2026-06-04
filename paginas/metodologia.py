@@ -1041,6 +1041,9 @@ def crear_metodologia(
     
     porcentaje_delitos = hoja["B118"].value
     porcentaje_riesgos = hoja["C118"].value
+    pdf.setFillColor(
+        colors.black
+    )
     
     pdf.setFont(
         "Helvetica-Bold",
@@ -1065,6 +1068,9 @@ def crear_metodologia(
     
     total_delitos = hoja["B119"].value
     total_riesgos = hoja["C119"].value
+    pdf.setFillColor(
+        colors.black
+    )
     
     pdf.setFont(
         "Helvetica",
