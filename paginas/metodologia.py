@@ -581,9 +581,7 @@ def crear_metodologia(
     # PAGINA 3
     # DIAGRAMA DE PARETO
     # ==================================================
-    
-    pdf.showPage()
-    
+     
     dibujar_header_footer(pdf)
     
     # ==================================================
