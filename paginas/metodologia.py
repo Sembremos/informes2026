@@ -1148,7 +1148,7 @@ def crear_metodologia(
         MICMAC_ANCHO
     ) / 2
 
-    MICMAC_Y = 600
+    MICMAC_Y = 450
 
     LINEA_Y = 350
 
