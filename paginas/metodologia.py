@@ -1645,19 +1645,20 @@ def crear_metodologia(
                     estilo_lista_micmac2
                 )
 
-                p.wrapOn(
-                    pdf,
+                w, h = p.wrap(
                     55,
-                    40
+                    100
                 )
-
+                
                 p.drawOn(
                     pdf,
                     x,
-                    y_actual
+                    y_actual - h
                 )
-
-                y_actual -= ESPACIO_LINEA_2
+                
+                y_actual -= (
+                    h + 2
+                )
 
             y_actual = y
 
@@ -1668,20 +1669,20 @@ def crear_metodologia(
                     estilo_lista_micmac2
                 )
 
-                p.wrapOn(
-                    pdf,
+                w, h = p.wrap(
                     55,
-                    40
+                    100
                 )
-
+                
                 p.drawOn(
                     pdf,
-                    x +
-                    SEGUNDA_COLUMNA_X_2,
-                    y_actual
+                    x + SEGUNDA_COLUMNA_X_2,
+                    y_actual - h
                 )
-
-                y_actual -= ESPACIO_LINEA_2
+                
+                y_actual -= (
+                    h + 2
+                )
 
     # ==================================================
     # RIESGOS SOCIALES
