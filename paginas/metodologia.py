@@ -1140,7 +1140,7 @@ def crear_metodologia(
     TEXTO_ANCHO = 500
     TEXTO_ALTO = 40
 
-    MICMAC_ANCHO = 500
+    MICMAC_ANCHO = 550
     MICMAC_ALTO = (1750 * MICMAC_ANCHO) / 2480
 
     MICMAC_X = (
@@ -1148,7 +1148,7 @@ def crear_metodologia(
         MICMAC_ANCHO
     ) / 2
 
-    MICMAC_Y = 350
+    MICMAC_Y = 360
 
     LINEA_Y = 350
 
