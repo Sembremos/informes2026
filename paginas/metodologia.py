@@ -1148,9 +1148,9 @@ def crear_metodologia(
         MICMAC_ANCHO
     ) / 2
 
-    MICMAC_Y = 345
+    MICMAC_Y = 330
 
-    LINEA_Y = 350
+    LINEA_Y = 330
 
     # ==================================================
     # CUADRANTES
