@@ -1107,3 +1107,642 @@ def crear_metodologia(
         TOTAL_RIESGOS_Y,
         f"{float(total_riesgos) * 100:.2f}%"
     )
+
+#=====================================================
+#PAGINA 4
+#=====================================================
+
+    pdf.drawCentredString(
+        TOTAL_RIESGOS_X,
+        TOTAL_RIESGOS_Y,
+        f"{float(total_riesgos) * 100:.2f}%"
+    )
+
+    # ==================================================
+    # PAGINA 4
+    # MICMAC
+    # ==================================================
+
+    pdf.showPage()
+
+    dibujar_header_footer(pdf)
+
+    # ==================================================
+    # PARAMETROS EDITABLES
+    # ==================================================
+
+    TITULO_X = 40
+    TITULO_Y = 750
+
+    TEXTO_X = 40
+    TEXTO_Y = 715
+
+    TEXTO_ANCHO = 500
+    TEXTO_ALTO = 40
+
+    MICMAC_ANCHO = 480
+    MICMAC_ALTO = (1750 * MICMAC_ANCHO) / 2480
+
+    MICMAC_X = (
+        ancho_pagina -
+        MICMAC_ANCHO
+    ) / 2
+
+    MICMAC_Y = 245
+
+    LINEA_Y = 290
+
+    # ==================================================
+    # CUADRANTES
+    # ==================================================
+
+    PODER_X = 65
+    PODER_Y = 610
+
+    CONFLICTO_X = 330
+    CONFLICTO_Y = 610
+
+    AUTONOMAS_X = 65
+    AUTONOMAS_Y = 390
+
+    RESULTADOS_X = 330
+    RESULTADOS_Y = 390
+
+    ANCHO_CUADRANTE = 220
+
+    ALTO_CUADRANTE = 170
+
+    ESPACIO_LINEA = 15
+
+    SEGUNDA_COLUMNA_X = 115
+
+    # ==================================================
+    # TITULO
+    # ==================================================
+
+    pdf.setFillColor(
+        colors.HexColor(
+            TITULO_2["color"]
+        )
+    )
+
+    pdf.setFont(
+        "Helvetica-Bold",
+        TITULO_2["tamano"]
+    )
+
+    pdf.drawString(
+        TITULO_X,
+        TITULO_Y,
+        "MICMAC"
+    )
+
+    # ==================================================
+    # PARRAFO
+    # ==================================================
+
+    estilo_parrafo = ParagraphStyle(
+        "micmac",
+        fontName="Helvetica",
+        fontSize=PARRAFO["tamano"],
+        leading=15,
+        alignment=4
+    )
+
+    texto = Paragraph(
+        "((Matriz de Impactos Cruzado – Multiplicación Aplicada a un Clasificación))",
+        estilo_parrafo
+    )
+
+    texto.wrapOn(
+        pdf,
+        TEXTO_ANCHO,
+        TEXTO_ALTO
+    )
+
+    texto.drawOn(
+        pdf,
+        TEXTO_X,
+        TEXTO_Y
+    )
+
+    # ==================================================
+    # IMAGEN MICMAC
+    # ==================================================
+
+    pdf.drawImage(
+        "portadas/micmac.png",
+        MICMAC_X,
+        MICMAC_Y,
+        width=MICMAC_ANCHO,
+        height=MICMAC_ALTO
+    )
+
+    # ==================================================
+    # ESTILO LISTAS
+    # ==================================================
+
+    estilo_lista = ParagraphStyle(
+        "lista_micmac",
+        fontName="Helvetica",
+        fontSize=12,
+        leading=11
+    )
+
+    # ==================================================
+    # FUNCION DIBUJAR CUADRANTE
+    # ==================================================
+
+    def dibujar_cuadrante(
+        lista,
+        x,
+        y
+    ):
+
+        if len(lista) <= 8:
+
+            y_actual = y
+
+            for item in lista:
+
+                p = Paragraph(
+                    str(item),
+                    estilo_lista
+                )
+
+                p.wrapOn(
+                    pdf,
+                    ANCHO_CUADRANTE,
+                    40
+                )
+
+                p.drawOn(
+                    pdf,
+                    x,
+                    y_actual
+                )
+
+                y_actual -= ESPACIO_LINEA
+
+        else:
+
+            izquierda = lista[:8]
+            derecha = lista[8:]
+
+            y_actual = y
+
+            for item in izquierda:
+
+                p = Paragraph(
+                    str(item),
+                    estilo_lista
+                )
+
+                p.wrapOn(
+                    pdf,
+                    100,
+                    40
+                )
+
+                p.drawOn(
+                    pdf,
+                    x,
+                    y_actual
+                )
+
+                y_actual -= ESPACIO_LINEA
+
+            y_actual = y
+
+            for item in derecha:
+
+                p = Paragraph(
+                    str(item),
+                    estilo_lista
+                )
+
+                p.wrapOn(
+                    pdf,
+                    100,
+                    40
+                )
+
+                p.drawOn(
+                    pdf,
+                    x + SEGUNDA_COLUMNA_X,
+                    y_actual
+                )
+
+                y_actual -= ESPACIO_LINEA
+
+    # ==================================================
+    # PODER
+    # ==================================================
+
+    poder = []
+
+    for fila in range(
+        124,
+        141
+    ):
+
+        valor = hoja[
+            f"B{fila}"
+        ].value
+
+        if (
+            valor is None
+            or
+            str(valor).strip() == ""
+        ):
+            continue
+
+        poder.append(
+            str(valor)
+        )
+
+    dibujar_cuadrante(
+        poder,
+        PODER_X,
+        PODER_Y
+    )
+
+    # ==================================================
+    # CONFLICTO
+    # ==================================================
+
+    conflicto = []
+
+    for fila in range(
+        124,
+        141
+    ):
+
+        valor = hoja[
+            f"C{fila}"
+        ].value
+
+        if (
+            valor is None
+            or
+            str(valor).strip() == ""
+        ):
+            continue
+
+        conflicto.append(
+            str(valor)
+        )
+
+    dibujar_cuadrante(
+        conflicto,
+        CONFLICTO_X,
+        CONFLICTO_Y
+    )
+
+    # ==================================================
+    # AUTONOMAS
+    # ==================================================
+
+    autonomas = []
+
+    for fila in range(
+        124,
+        141
+    ):
+
+        valor = hoja[
+            f"E{fila}"
+        ].value
+
+        if (
+            valor is None
+            or
+            str(valor).strip() == ""
+        ):
+            continue
+
+        autonomas.append(
+            str(valor)
+        )
+
+    dibujar_cuadrante(
+        autonomas,
+        AUTONOMAS_X,
+        AUTONOMAS_Y
+    )
+
+    # ==================================================
+    # RESULTADOS
+    # ==================================================
+
+    resultados = []
+
+    for fila in range(
+        124,
+        141
+    ):
+
+        valor = hoja[
+            f"D{fila}"
+        ].value
+
+        if (
+            valor is None
+            or
+            str(valor).strip() == ""
+        ):
+            continue
+
+        resultados.append(
+            str(valor)
+        )
+
+    dibujar_cuadrante(
+        resultados,
+        RESULTADOS_X,
+        RESULTADOS_Y
+    )
+
+    # ==================================================
+    # LINEA
+    # ==================================================
+
+    pdf.line(
+        0,
+        LINEA_Y,
+        ancho_pagina,
+        LINEA_Y
+    )
+
+    #==================================================
+    # MICMAC 2
+    # ==================================================
+
+    MICMAC2_ANCHO = 480
+
+    MICMAC2_ALTO = (
+        1224 *
+        MICMAC2_ANCHO
+    ) / 2480
+
+    MICMAC2_X = (
+        ancho_pagina -
+        MICMAC2_ANCHO
+    ) / 2
+
+    MICMAC2_Y = 20
+
+    COLOR_TOTAL = colors.HexColor(
+        "#53b7ff"
+    )
+
+    # ==================================================
+    # TOTALES
+    # ==================================================
+
+    TOTAL_RIESGOS_X = 335
+    TOTAL_RIESGOS_Y = 225
+
+    TOTAL_DELITOS_X = 485
+    TOTAL_DELITOS_Y = 225
+
+    PRIORIZADAS_X = 135
+    PRIORIZADAS_Y = 150
+
+    # ==================================================
+    # LISTAS
+    # ==================================================
+
+    RIESGOS_X = 255
+    RIESGOS_Y = 175
+
+    DELITOS_X = 405
+    DELITOS_Y = 175
+
+    ANCHO_LISTA = 120
+
+    ESPACIO_LINEA_2 = 12
+
+    SEGUNDA_COLUMNA_X_2 = 60
+
+    # ==================================================
+    # IMAGEN MICMAC2
+    # ==================================================
+
+    pdf.drawImage(
+        "portadas/micmac2.png",
+        MICMAC2_X,
+        MICMAC2_Y,
+        width=MICMAC2_ANCHO,
+        height=MICMAC2_ALTO
+    )
+
+    # ==================================================
+    # TOTALES
+    # ==================================================
+
+    t_riesgos = hoja[
+        "K141"
+    ].value
+
+    t_delitos = hoja[
+        "L141"
+    ].value
+
+    priorizadas = hoja[
+        "M141"
+    ].value
+
+    pdf.setFillColor(
+        COLOR_TOTAL
+    )
+
+    pdf.setFont(
+        "Helvetica-Bold",
+        22
+    )
+
+    pdf.drawCentredString(
+        TOTAL_RIESGOS_X,
+        TOTAL_RIESGOS_Y,
+        str(t_riesgos)
+    )
+
+    pdf.drawCentredString(
+        TOTAL_DELITOS_X,
+        TOTAL_DELITOS_Y,
+        str(t_delitos)
+    )
+
+    pdf.setFont(
+        "Helvetica-Bold",
+        24
+    )
+
+    pdf.drawCentredString(
+        PRIORIZADAS_X,
+        PRIORIZADAS_Y,
+        str(priorizadas)
+    )
+
+    # ==================================================
+    # ESTILO LISTAS
+    # ==================================================
+
+    estilo_lista_micmac2 = ParagraphStyle(
+        "lista_micmac2",
+        fontName="Helvetica",
+        fontSize=12,
+        leading=10
+    )
+
+    # ==================================================
+    # FUNCION LISTAS
+    # ==================================================
+
+    def dibujar_lista_micmac2(
+        lista,
+        x,
+        y
+    ):
+
+        if len(lista) <= 8:
+
+            y_actual = y
+
+            for item in lista:
+
+                p = Paragraph(
+                    str(item),
+                    estilo_lista_micmac2
+                )
+
+                p.wrapOn(
+                    pdf,
+                    ANCHO_LISTA,
+                    40
+                )
+
+                p.drawOn(
+                    pdf,
+                    x,
+                    y_actual
+                )
+
+                y_actual -= ESPACIO_LINEA_2
+
+        else:
+
+            izquierda = lista[:8]
+            derecha = lista[8:]
+
+            y_actual = y
+
+            for item in izquierda:
+
+                p = Paragraph(
+                    str(item),
+                    estilo_lista_micmac2
+                )
+
+                p.wrapOn(
+                    pdf,
+                    55,
+                    40
+                )
+
+                p.drawOn(
+                    pdf,
+                    x,
+                    y_actual
+                )
+
+                y_actual -= ESPACIO_LINEA_2
+
+            y_actual = y
+
+            for item in derecha:
+
+                p = Paragraph(
+                    str(item),
+                    estilo_lista_micmac2
+                )
+
+                p.wrapOn(
+                    pdf,
+                    55,
+                    40
+                )
+
+                p.drawOn(
+                    pdf,
+                    x +
+                    SEGUNDA_COLUMNA_X_2,
+                    y_actual
+                )
+
+                y_actual -= ESPACIO_LINEA_2
+
+    # ==================================================
+    # RIESGOS SOCIALES
+    # ==================================================
+
+    riesgos_sociales = []
+
+    for fila in range(
+        124,
+        141
+    ):
+
+        valor = hoja[
+            f"K{fila}"
+        ].value
+
+        if (
+            valor is None
+            or
+            str(valor).strip() == ""
+        ):
+            continue
+
+        riesgos_sociales.append(
+            str(valor)
+        )
+
+    dibujar_lista_micmac2(
+        riesgos_sociales,
+        RIESGOS_X,
+        RIESGOS_Y
+    )
+
+    # ==================================================
+    # DELITOS
+    # ==================================================
+
+    delitos_micmac = []
+
+    for fila in range(
+        124,
+        141
+    ):
+
+        valor = hoja[
+            f"L{fila}"
+        ].value
+
+        if (
+            valor is None
+            or
+            str(valor).strip() == ""
+        ):
+            continue
+
+        delitos_micmac.append(
+            str(valor)
+        )
+
+    dibujar_lista_micmac2(
+        delitos_micmac,
+        DELITOS_X,
+        DELITOS_Y
+    )
