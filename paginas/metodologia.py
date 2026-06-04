@@ -1148,7 +1148,7 @@ def crear_metodologia(
         MICMAC_ANCHO
     ) / 2
 
-    MICMAC_Y = 360
+    MICMAC_Y = 345
 
     LINEA_Y = 350
 
@@ -1478,7 +1478,7 @@ def crear_metodologia(
     # MICMAC 2
     # ==================================================
 
-    MICMAC2_ANCHO = 480
+    MICMAC2_ANCHO = 490
 
     MICMAC2_ALTO = (
         1224 *
@@ -1490,7 +1490,7 @@ def crear_metodologia(
         MICMAC2_ANCHO
     ) / 2
 
-    MICMAC2_Y = 80
+    MICMAC2_Y = 65
 
     COLOR_TOTAL = colors.HexColor(
         "#53b7ff"
