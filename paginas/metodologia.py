@@ -814,7 +814,7 @@ def crear_metodologia(
     )
     
     tabla_delitos.setStyle(
-    
+
         TableStyle(
     
             [
@@ -845,6 +845,20 @@ def crear_metodologia(
                 ),
     
                 (
+                    "FONTSIZE",
+                    (0,0),
+                    (-1,0),
+                    TABLA_L1["fuente_header"]
+                ),
+    
+                (
+                    "FONTSIZE",
+                    (0,1),
+                    (-1,-1),
+                    TABLA_L1["fuente_texto"]
+                ),
+    
+                (
                     "GRID",
                     (0,0),
                     (-1,-1),
@@ -852,6 +866,20 @@ def crear_metodologia(
                     colors.HexColor(
                         TABLA_L1["color_borde"]
                     )
+                ),
+    
+                (
+                    "ALIGN",
+                    (0,0),
+                    (-1,-1),
+                    "CENTER"
+                ),
+    
+                (
+                    "VALIGN",
+                    (0,0),
+                    (-1,-1),
+                    "MIDDLE"
                 )
     
             ]
@@ -924,7 +952,7 @@ def crear_metodologia(
     )
     
     tabla_riesgos.setStyle(
-    
+
         TableStyle(
     
             [
@@ -955,6 +983,20 @@ def crear_metodologia(
                 ),
     
                 (
+                    "FONTSIZE",
+                    (0,0),
+                    (-1,0),
+                    TABLA_L1["fuente_header"]
+                ),
+    
+                (
+                    "FONTSIZE",
+                    (0,1),
+                    (-1,-1),
+                    TABLA_L1["fuente_texto"]
+                ),
+    
+                (
                     "GRID",
                     (0,0),
                     (-1,-1),
@@ -962,6 +1004,20 @@ def crear_metodologia(
                     colors.HexColor(
                         TABLA_L1["color_borde"]
                     )
+                ),
+    
+                (
+                    "ALIGN",
+                    (0,0),
+                    (-1,-1),
+                    "CENTER"
+                ),
+    
+                (
+                    "VALIGN",
+                    (0,0),
+                    (-1,-1),
+                    "MIDDLE"
                 )
     
             ]
@@ -969,7 +1025,6 @@ def crear_metodologia(
         )
     
     )
-    
     ancho_tabla, alto_tabla = tabla_riesgos.wrap(
         0,
         0
