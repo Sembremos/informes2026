@@ -1148,24 +1148,24 @@ def crear_metodologia(
         MICMAC_ANCHO
     ) / 2
 
-    MICMAC_Y = 330
+    MICMAC_Y = 320
 
-    LINEA_Y = 330
+    LINEA_Y = 320
 
     # ==================================================
     # CUADRANTES
     # ==================================================
 
-    PODER_X = 65
-    PODER_Y = 610
+    PODER_X = 75
+    PODER_Y = 650
 
-    CONFLICTO_X = 330
-    CONFLICTO_Y = 610
+    CONFLICTO_X = 315
+    CONFLICTO_Y = 650
 
-    AUTONOMAS_X = 65
-    AUTONOMAS_Y = 390
+    AUTONOMAS_X = 75
+    AUTONOMAS_Y = 430
 
-    RESULTADOS_X = 330
+    RESULTADOS_X = 430
     RESULTADOS_Y = 390
 
     ANCHO_CUADRANTE = 220
@@ -1245,8 +1245,8 @@ def crear_metodologia(
     estilo_lista = ParagraphStyle(
         "lista_micmac",
         fontName="Helvetica",
-        fontSize=12,
-        leading=11
+        fontSize=10,
+        leading=10
     )
 
     # ==================================================
@@ -1500,14 +1500,14 @@ def crear_metodologia(
     # TOTALES
     # ==================================================
 
-    TOTAL_RIESGOS_X = 335
-    TOTAL_RIESGOS_Y = 225
+    TOTAL_RIESGOS_X = 330
+    TOTAL_RIESGOS_Y = 240
 
-    TOTAL_DELITOS_X = 485
-    TOTAL_DELITOS_Y = 225
+    TOTAL_DELITOS_X = 450
+    TOTAL_DELITOS_Y = 240
 
-    PRIORIZADAS_X = 135
-    PRIORIZADAS_Y = 150
+    PRIORIZADAS_X = 145
+    PRIORIZADAS_Y = 175
 
     # ==================================================
     # LISTAS
@@ -1592,7 +1592,7 @@ def crear_metodologia(
     estilo_lista_micmac2 = ParagraphStyle(
         "lista_micmac2",
         fontName="Helvetica",
-        fontSize=12,
+        fontSize=10,
         leading=10
     )
 
