@@ -613,26 +613,26 @@ def crear_metodologia(
     # DATOS SOBRE IMAGEN PARETO
     # -------------------------
     
-    ENTRADA_X = 130
-    ENTRADA_Y = 610
+    ENTRADA_X = 160
+    ENTRADA_Y = 630
     
-    REGISTRADOS_X = 445
-    REGISTRADOS_Y = 650
+    REGISTRADOS_X = 480
+    REGISTRADOS_Y = 680
     
-    PARETO_20_80_X = 445
-    PARETO_20_80_Y = 570
+    PARETO_20_80_X = 480
+    PARETO_20_80_Y = 600
     
-    FUENTE_PARETO = 24
+    FUENTE_PARETO = 22
     
     # -------------------------
     # TABLAS
     # -------------------------
     
     TABLA_DELITOS_X = 40
-    TABLA_DELITOS_Y = 455
+    TABLA_DELITOS_Y = 470
     
     TABLA_RIESGOS_X = 310
-    TABLA_RIESGOS_Y = 455
+    TABLA_RIESGOS_Y = 470
     
     TABLA_ANCHO = 240
     
@@ -641,16 +641,16 @@ def crear_metodologia(
     # -------------------------
     
     PORC_DELITOS_X = 160
-    PORC_DELITOS_Y = 450
+    PORC_DELITOS_Y = 100
     
     TOTAL_DELITOS_X = 160
-    TOTAL_DELITOS_Y = 425
+    TOTAL_DELITOS_Y = 500
     
     PORC_RIESGOS_X = 430
-    PORC_RIESGOS_Y = 450
+    PORC_RIESGOS_Y = 100
     
     TOTAL_RIESGOS_X = 430
-    TOTAL_RIESGOS_Y = 425
+    TOTAL_RIESGOS_Y = 500
     
     # ==================================================
     # TITULO
@@ -723,7 +723,7 @@ def crear_metodologia(
     pareto_20_80 = hoja["C93"].value
     
     pdf.setFillColor(
-        colors.black
+        colors.white
     )
     
     pdf.setFont(
@@ -794,15 +794,15 @@ def crear_metodologia(
     
     if cantidad_delitos <= 10:
     
-        alto_fila_delitos = 20
+        alto_fila_delitos = 30
     
     elif cantidad_delitos <= 15:
     
-        alto_fila_delitos = 15
+        alto_fila_delitos = 25
     
     else:
     
-        alto_fila_delitos = 11
+        alto_fila_delitos = 20
     
     tabla_delitos = Table(
         datos_delitos,
