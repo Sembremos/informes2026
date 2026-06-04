@@ -1156,17 +1156,17 @@ def crear_metodologia(
     # CUADRANTES
     # ==================================================
 
-    PODER_X = 75
+    PODER_X = 80
     PODER_Y = 650
 
     CONFLICTO_X = 315
     CONFLICTO_Y = 650
 
-    AUTONOMAS_X = 75
-    AUTONOMAS_Y = 430
+    AUTONOMAS_X = 80
+    AUTONOMAS_Y = 460
 
-    RESULTADOS_X = 430
-    RESULTADOS_Y = 390
+    RESULTADOS_X = 315
+    RESULTADOS_Y = 460
 
     ANCHO_CUADRANTE = 220
 
@@ -1500,11 +1500,11 @@ def crear_metodologia(
     # TOTALES
     # ==================================================
 
-    TOTAL_RIESGOS_X = 330
-    TOTAL_RIESGOS_Y = 240
+    TOTAL_RIESGOS_X = 325
+    TOTAL_RIESGOS_Y = 260
 
-    TOTAL_DELITOS_X = 450
-    TOTAL_DELITOS_Y = 240
+    TOTAL_DELITOS_X = 445
+    TOTAL_DELITOS_Y = 260
 
     PRIORIZADAS_X = 145
     PRIORIZADAS_Y = 175
@@ -1514,10 +1514,10 @@ def crear_metodologia(
     # ==================================================
 
     RIESGOS_X = 255
-    RIESGOS_Y = 175
+    RIESGOS_Y = 210
 
     DELITOS_X = 405
-    DELITOS_Y = 175
+    DELITOS_Y = 210
 
     ANCHO_LISTA = 120
 
