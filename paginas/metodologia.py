@@ -613,14 +613,14 @@ def crear_metodologia(
     # DATOS SOBRE IMAGEN PARETO
     # -------------------------
     
-    ENTRADA_X = 210
+    ENTRADA_X = 205
     ENTRADA_Y = 630
     
-    REGISTRADOS_X = 485
+    REGISTRADOS_X = 480
     REGISTRADOS_Y = 670
     
-    PARETO_20_80_X = 485
-    PARETO_20_80_Y = 590
+    PARETO_20_80_X = 480
+    PARETO_20_80_Y = 595
     
     FUENTE_PARETO = 22
     
