@@ -824,7 +824,7 @@ def crear_metodologia(
                     (0,0),
                     (-1,0),
                     colors.HexColor(
-                        TABLA_L2["color_header"]
+                        TABLA_L1["color_header"]
                     )
                 ),
     
@@ -960,7 +960,7 @@ def crear_metodologia(
                     (-1,-1),
                     1,
                     colors.HexColor(
-                        TABLA_L2["color_borde"]
+                        TABLA_L1["color_borde"]
                     )
                 )
     
