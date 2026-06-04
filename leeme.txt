@@ -1,0 +1,3 @@
+pagina 9
+listas de micmac2 hay que sibirlas 
+arreglar problema de traslape en filas
