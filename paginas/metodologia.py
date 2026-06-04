@@ -606,9 +606,9 @@ def crear_metodologia(
         PARETO_ANCHO
     ) / 2
     
-    PARETO_Y = 500
+    PARETO_Y = 550
     
-    LINEA_Y = 485
+    LINEA_Y = 535
     
     # -------------------------
     # DATOS SOBRE IMAGEN PARETO
@@ -833,7 +833,7 @@ def crear_metodologia(
                     (0,0),
                     (-1,0),
                     colors.HexColor(
-                        TABLA_L2["color_texto_header"]
+                        TABLA_L1["color_texto_header"]
                     )
                 ),
     
@@ -850,7 +850,7 @@ def crear_metodologia(
                     (-1,-1),
                     1,
                     colors.HexColor(
-                        TABLA_L2["color_borde"]
+                        TABLA_L1["color_borde"]
                     )
                 )
     
@@ -934,7 +934,7 @@ def crear_metodologia(
                     (0,0),
                     (-1,0),
                     colors.HexColor(
-                        TABLA_L2["color_header"]
+                        TABLA_L1["color_header"]
                     )
                 ),
     
@@ -943,7 +943,7 @@ def crear_metodologia(
                     (0,0),
                     (-1,0),
                     colors.HexColor(
-                        TABLA_L2["color_texto_header"]
+                        TABLA_L1["color_texto_header"]
                     )
                 ),
     
