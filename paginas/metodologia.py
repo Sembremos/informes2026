@@ -27,6 +27,7 @@ from styles.textos import (
 )
 
 from styles.tablas import (
+    TABLA_L1
     TABLA_L2
 )
 
