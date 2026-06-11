@@ -1609,27 +1609,28 @@ def crear_metodologia(
         if len(lista) <= 8:
 
             y_actual = y
-
+        
             for item in lista:
-
+        
                 p = Paragraph(
                     str(item),
                     estilo_lista_micmac2
                 )
-
-                p.wrapOn(
-                    pdf,
+        
+                w, h = p.wrap(
                     ANCHO_LISTA,
-                    40
+                    100
                 )
-
+        
                 p.drawOn(
                     pdf,
                     x,
-                    y_actual
+                    y_actual - h
                 )
-
-                y_actual -= ESPACIO_LINEA_2
+        
+                y_actual -= (
+                    h + 4
+                )
 
         else:
 
