@@ -1593,7 +1593,7 @@ def crear_metodologia(
         "lista_micmac2",
         fontName="Helvetica",
         fontSize=10,
-        leading=10
+        leading=12
     )
 
     # ==================================================
@@ -1646,7 +1646,7 @@ def crear_metodologia(
                 )
 
                 w, h = p.wrap(
-                    55,
+                    70,
                     100
                 )
                 
@@ -1681,7 +1681,7 @@ def crear_metodologia(
                 )
                 
                 y_actual -= (
-                    h + 2
+                    h + 4
                 )
 
     # ==================================================
