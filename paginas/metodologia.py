@@ -1748,3 +1748,338 @@ def crear_metodologia(
         DELITOS_X,
         DELITOS_Y
     )
+
+    # ==================================================
+    # PAGINA 5
+    # TRIANGULO DE LAS VIOLENCIAS
+    # ==================================================
+    
+    pdf.showPage()
+    
+    dibujar_header_footer(pdf)
+
+    # ==================================================
+    # PARAMETROS
+    # ==================================================
+    
+    TITULO_X = 40
+    TITULO_Y = 750
+    
+    TEXTO1_X = 40
+    TEXTO1_Y = 690
+    
+    TEXTO1_ANCHO = 320
+    TEXTO1_ALTO = 120
+    
+    TEXTO2_X = 40
+    TEXTO2_Y = 560
+    
+    TEXTO2_ANCHO = 320
+    TEXTO2_ALTO = 100
+    
+    TRIANGULO_ANCHO = 200
+    TRIANGULO_ALTO = 200
+    
+    TRIANGULO_X = 360
+    TRIANGULO_Y = 500
+    
+    LINEA_Y = 470
+    
+    TITULO2_X = 40
+    TITULO2_Y = 430
+    
+    TEXTO3_X = 40
+    TEXTO3_Y = 395
+    
+    TABLA_X = 40
+    TABLA_Y = 360
+
+    # ==================================================
+    # DATOS EXCEL
+    # ==================================================
+    
+    x1 = hoja["D118"].value
+    x2 = hoja["A147"].value
+
+    # ==================================================
+    # TITULO
+    # ==================================================
+    
+    pdf.setFillColor(
+        colors.HexColor(
+            TITULO_2["color"]
+        )
+    )
+    
+    pdf.setFont(
+        "Helvetica-Bold",
+        TITULO_2["tamano"]
+    )
+    
+    pdf.drawString(
+        TITULO_X,
+        TITULO_Y,
+        "Triangulo de las Violencias"
+    )
+
+    # ==================================================
+    # TEXTO 1
+    # ==================================================
+    
+    estilo_parrafo = ParagraphStyle(
+        "triangulo_1",
+        fontName="Helvetica",
+        fontSize=PARRAFO["tamano"],
+        leading=15,
+        alignment=4
+    )
+    
+    texto1 = Paragraph(
+        """
+        Es una metodología también llamada “teoría de los conflictos”
+        creada por el sociólogo y matemático Johan Galtung, que permite
+        estudiar y transformar los conflictos mediante la identificación
+        de variantes de la violencia (Directa, cultural y estructural),
+        visualizando las causas generadoras de las problemáticas.
+        """,
+        estilo_parrafo
+    )
+    
+    texto1.wrapOn(
+        pdf,
+        TEXTO1_ANCHO,
+        TEXTO1_ALTO
+    )
+    
+    texto1.drawOn(
+        pdf,
+        TEXTO1_X,
+        TEXTO1_Y
+    )
+
+    # ==================================================
+    # TEXTO 2
+    # ==================================================
+    
+    texto2 = Paragraph(
+        f"""
+        Frente a lo anterior, esta metodología permitió la
+        identificación de <font size="18"><b>{x1}</b></font> causas,
+        directamente relacionadas con los
+        <font size="18"><b>{x2}</b></font> factores priorizados
+        en la Mic-Mac.
+        """,
+        estilo_parrafo
+    )
+    
+    texto2.wrapOn(
+        pdf,
+        TEXTO2_ANCHO,
+        TEXTO2_ALTO
+    )
+    
+    texto2.drawOn(
+        pdf,
+        TEXTO2_X,
+        TEXTO2_Y
+)
+
+    # ==================================================
+    # IMAGEN TRIANGULO
+    # ==================================================
+    
+    pdf.drawImage(
+        "portadas/triangulo.png",
+        TRIANGULO_X,
+        TRIANGULO_Y,
+        width=TRIANGULO_ANCHO,
+        height=TRIANGULO_ALTO,
+        preserveAspectRatio=True
+    )
+
+    # ==================================================
+    # LINEA
+    # ==================================================
+    
+    pdf.line(
+        0,
+        LINEA_Y,
+        ancho_pagina,
+        LINEA_Y
+    )
+
+    # ==================================================
+    # TITULO 2
+    # ==================================================
+    
+    pdf.setFillColor(
+        colors.HexColor(
+            TITULO_2["color"]
+        )
+    )
+    
+    pdf.setFont(
+        "Helvetica-Bold",
+        TITULO_2["tamano"]
+    )
+    
+    pdf.drawString(
+        TITULO2_X,
+        TITULO2_Y,
+        "Proceso Metodológico"
+    )
+
+    # ==================================================
+    # TEXTO de abajo
+    # ==================================================
+    
+    texto3 = Paragraph(
+        """
+        Lista de Instituciones participantes en
+        calificación de procesos: MIC-MAC y
+        Triangulo de las Violencias
+        """,
+        estilo_parrafo
+    )
+    
+    texto3.wrapOn(
+        pdf,
+        500,
+        50
+    )
+    
+    texto3.drawOn(
+        pdf,
+        TEXTO3_X,
+        TEXTO3_Y
+    )
+
+    # ==================================================
+    # TABLA INSTITUCIONES
+    # ==================================================
+    
+    datos_tabla = [
+        ["Lista de Instituciones"]
+    ]
+
+#______________________________________________________________
+
+    for fila in range(
+        150,
+        160
+    ):
+    
+        valor_b = hoja[f"B{fila}"].value
+        valor_c = hoja[f"C{fila}"].value
+    
+        if (
+            valor_b is None
+            and
+            valor_c is None
+        ):
+            continue
+    
+        texto_fila = ""
+    
+        if valor_b:
+            texto_fila += str(valor_b)
+    
+        if valor_c:
+            texto_fila += f" - {valor_c}"
+    
+        datos_tabla.append(
+            [texto_fila]
+        )
+
+#____________________________________________
+#Crear tabla
+#___________________________________________
+    tabla = Table(
+        datos_tabla,
+        colWidths=[500]
+    )
+    
+    tabla.setStyle(
+    
+        TableStyle(
+    
+            [
+    
+                (
+                    "BACKGROUND",
+                    (0,0),
+                    (-1,0),
+                    colors.HexColor(
+                        TABLA_L1["color_header"]
+                    )
+                ),
+    
+                (
+                    "TEXTCOLOR",
+                    (0,0),
+                    (-1,0),
+                    colors.HexColor(
+                        TABLA_L1["color_texto_header"]
+                    )
+                ),
+    
+                (
+                    "FONTNAME",
+                    (0,0),
+                    (-1,0),
+                    "Helvetica-Bold"
+                ),
+    
+                (
+                    "FONTSIZE",
+                    (0,0),
+                    (-1,0),
+                    TABLA_L1["fuente_header"]
+                ),
+    
+                (
+                    "FONTSIZE",
+                    (0,1),
+                    (-1,-1),
+                    TABLA_L1["fuente_texto"]
+                ),
+    
+                (
+                    "GRID",
+                    (0,0),
+                    (-1,-1),
+                    1,
+                    colors.HexColor(
+                        TABLA_L1["color_borde"]
+                    )
+                ),
+    
+                (
+                    "VALIGN",
+                    (0,0),
+                    (-1,-1),
+                    "MIDDLE"
+                )
+    
+            ]
+    
+        )
+    
+    )
+
+#dibuja tabla
+    ancho_tabla, alto_tabla = tabla.wrap(
+        0,
+        0
+    )
+    
+    tabla.drawOn(
+        pdf,
+        TABLA_X,
+        TABLA_Y - alto_tabla
+    )
+
+    
+    
+
+        
