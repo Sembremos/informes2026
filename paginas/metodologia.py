@@ -1163,10 +1163,10 @@ def crear_metodologia(
     CONFLICTO_Y = 650
 
     AUTONOMAS_X = 80
-    AUTONOMAS_Y = 460
+    AUTONOMAS_Y = 480
 
     RESULTADOS_X = 315
-    RESULTADOS_Y = 460
+    RESULTADOS_Y = 480
 
     ANCHO_CUADRANTE = 220
 
@@ -1514,10 +1514,10 @@ def crear_metodologia(
     # ==================================================
 
     RIESGOS_X = 255
-    RIESGOS_Y = 210
+    RIESGOS_Y = 220
 
     DELITOS_X = 405
-    DELITOS_Y = 210
+    DELITOS_Y = 220
 
     ANCHO_LISTA = 120
 
