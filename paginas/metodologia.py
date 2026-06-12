@@ -1766,22 +1766,31 @@ def crear_metodologia(
     TITULO_Y = 750
     
     TEXTO1_X = 40
-    TEXTO1_Y = 690
+    TEXTO1_Y = 620
     
-    TEXTO1_ANCHO = 320
+    TEXTO1_ANCHO = 250
     TEXTO1_ALTO = 120
     
     TEXTO2_X = 40
-    TEXTO2_Y = 560
+    TEXTO2_Y = 540
     
-    TEXTO2_ANCHO = 320
+    TEXTO2_ANCHO = 250
     TEXTO2_ALTO = 100
     
-    TRIANGULO_ANCHO = 200
-    TRIANGULO_ALTO = 200
+    TRIANGULO_ANCHO = 280
+    TRIANGULO_ALTO = 280
     
-    TRIANGULO_X = 360
-    TRIANGULO_Y = 500
+    TRIANGULO_X = 295
+    TRIANGULO_Y = 480
+
+    DIRECTA_X = 390
+    DIRECTA_Y = 715
+
+    SOCIOCULTURAL_X = 290
+    SOCIOCULTURAL_Y = 540
+
+    ESTRUCTURAL_X = 490
+    ESTRUCTURAL_Y = 540
     
     LINEA_Y = 470
     
@@ -1789,7 +1798,7 @@ def crear_metodologia(
     TITULO2_Y = 430
     
     TEXTO3_X = 40
-    TEXTO3_Y = 395
+    TEXTO3_Y = 380
     
     TABLA_X = 40
     TABLA_Y = 360
@@ -1800,6 +1809,11 @@ def crear_metodologia(
     
     x1 = hoja["D118"].value
     x2 = hoja["A147"].value
+
+    directa = hoja["A147"].value
+    sociocultural = hoja["B147"].value
+    estructural = hoja["C147"].value
+
 
     # ==================================================
     # TITULO
@@ -1898,6 +1912,73 @@ def crear_metodologia(
     )
 
     # ==================================================
+    # DATOS SOBRE TRIANGULO
+    # ==================================================
+
+    estilo_triangulo = ParagraphStyle(
+        "triangulo_datos",
+        fontName="Helvetica-Bold",
+        fontSize=22,
+        leading=11,
+        alignment=1
+    )
+
+    #Directa
+    texto_directa = Paragraph(
+        str(directa),
+        estilo_triangulo
+    )
+
+    texto_directa.wrapOn(
+        pdf,
+        90,
+        50
+    )
+
+    texto_directa.drawOn(
+        pdf,
+        DIRECTA_X,
+        DIRECTA_Y
+    )
+
+    #Sociocultural
+    texto_sociocultural = Paragraph(
+        str(sociocultural),
+        estilo_triangulo
+    )
+
+    texto_sociocultural.wrapOn(
+        pdf,
+        90,
+        50
+    )
+
+    texto_sociocultural.drawOn(
+        pdf,
+        SOCIOCULTURAL_X,
+        SOCIOCULTURAL_Y
+    )
+
+    #Estructural
+
+    texto_estructural = Paragraph(
+        str(estructural),
+        estilo_triangulo
+    )
+
+    texto_estructural.wrapOn(
+        pdf,
+        90,
+        50
+    )
+
+    texto_estructural.drawOn(
+        pdf,
+        ESTRUCTURAL_X,
+        ESTRUCTURAL_Y
+    )
+
+    # ==================================================
     # LINEA
     # ==================================================
     
@@ -1959,36 +2040,48 @@ def crear_metodologia(
     # ==================================================
     
     datos_tabla = [
-        ["Lista de Instituciones"]
-    ]
 
-#______________________________________________________________
+        [
+            "Lista de Instituciones",
+            ""
+        ],
+
+        [
+            "Institución",
+            "Fecha"
+        ]
+
+    ]
 
     for fila in range(
         150,
         160
     ):
-    
-        valor_b = hoja[f"B{fila}"].value
-        valor_c = hoja[f"C{fila}"].value
-    
+
+        institucion = hoja[f"B{fila}"].value
+        fecha = hoja[f"C{fila}"].value
+
         if (
-            valor_b is None
+            institucion is None
             and
-            valor_c is None
+            fecha is None
         ):
             continue
-    
-        texto_fila = ""
-    
-        if valor_b:
-            texto_fila += str(valor_b)
-    
-        if valor_c:
-            texto_fila += f" - {valor_c}"
-    
+
         datos_tabla.append(
-            [texto_fila]
+
+            [
+
+                str(institucion)
+                if institucion is not None
+                else "",
+
+                str(fecha)
+                if fecha is not None
+                else ""
+
+            ]
+
         )
 
 #____________________________________________
@@ -1996,9 +2089,12 @@ def crear_metodologia(
 #___________________________________________
     tabla = Table(
         datos_tabla,
-        colWidths=[500]
+        colWidths=[
+            370,
+            130
+        ]
     )
-    
+        
     tabla.setStyle(
     
         TableStyle(
@@ -2006,6 +2102,13 @@ def crear_metodologia(
             [
     
                 (
+                    "SPAN",
+                    (0,0),
+                    (1,0)
+                ),
+
+                (
+                    
                     "BACKGROUND",
                     (0,0),
                     (-1,0),
